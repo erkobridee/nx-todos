@@ -192,6 +192,34 @@
           }
         }
       }
+    },
+    "shared-data-model": {
+      "root": "libs/shared/data-model",
+      "sourceRoot": "libs/shared/data-model/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/shared/data-model/.eslintrc",
+            "tsConfig": [
+              "libs/shared/data-model/tsconfig.lib.json",
+              "libs/shared/data-model/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/data-model/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/data-model/jest.config.js",
+            "tsConfig": "libs/shared/data-model/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

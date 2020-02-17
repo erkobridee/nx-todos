@@ -1,5 +1,7 @@
 # NxTodos
 
+ToDos project example
+
 This project was generated using [Nx](https://nx.dev).
 
 <p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
@@ -73,4 +75,68 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
 ## Further help
 
-Visit the [Nx Documentation](https://nx.dev) to learn more.
+- [[YouTube] Nx: Extensible Dev Tools for Monorepos (React)](https://www.youtube.com/watch?v=E188J7E_MDU)
+
+- [[YouTube playlist] Nx Workspaces Course (Free version) - By Nrwl](https://www.youtube.com/watch?v=2mYLe9Kp9VM&list=PLakNactNC1dH38AfqmwabvOszDmKriGco)
+
+- [Nx Workspaces (by Nrwl) | Nx Playbook](https://nxplaybook.com/p/nx-workspaces) - Introduction to Using an Nx Monorepo - free course
+
+- Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+  - [CLI commandas to a React project with Nx](https://nx.dev/react/api/home)
+
+- [[GitHub] nrwl/nx-examples](https://github.com/nrwl/nx-examples)
+
+---
+
+- [[YouTube] Nx Quickstart - How to Scale a JavaScript Project](https://www.youtube.com/watch?v=VUyBY72mwrQ)
+
+- [[YouTube] Nx - Extensible Dev Tools for Monorepos (React Apps)](https://www.youtube.com/watch?v=Jxh_--FeJeY)
+
+- [[YouTube] Nx Storybook Integration: Demo by Isaac Mann of Nrwl](https://www.youtube.com/watch?v=sFpqyjT7u4s)
+
+---
+
+- Nx Console
+
+  - [[GitHub] nrwl/nx-console](https://github.com/nrwl/nx-console)
+
+  - [VSCode Plugin](https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console)
+
+---
+
+- ToDos examples
+
+  - [How To Build a React To-Do App with React Hooks | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-build-a-react-to-do-app-with-react-hooks)
+
+  - [Build a To-Do application Using Django and React | Scotch.io](https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react)
+
+## Steps
+
+1. creation command:
+
+`npx create-nx-workspace nx-todos`
+
+```
+preset: react + express
+application name: todos
+application styles: SASS (.scss)
+```
+
+2. test the generated application (you'll need 2 terminal to the following commands)
+
+```
+nx serve api
+nx serve todos
+```
+
+3. create a shared data-model libray
+
+`nx g @nrwl/workspace:lib data-model --directory=shared`
+
+4. add the uuid dependency to the project
+
+```
+yarn add uuid
+yard add -D @types/uuid
+```

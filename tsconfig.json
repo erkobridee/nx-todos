@@ -14,9 +14,11 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-todos/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@nx-todos/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@nx-todos/shared/data-model": ["libs/shared/data-model/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
