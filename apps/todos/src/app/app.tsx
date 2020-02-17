@@ -1,15 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Message } from '@nx-todos/api-interfaces';
+import * as React from 'react';
 
 export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
-
-  useEffect(() => {
-    fetch('/api')
-      .then(r => r.json())
-      .then(setMessage);
-  }, []);
-
   return (
     <>
       <div style={{ textAlign: 'center' }}>
@@ -19,7 +10,6 @@ export const App = () => {
           src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
         />
       </div>
-      <div>{m.message}</div>
     </>
   );
 };

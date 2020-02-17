@@ -1,12 +1,9 @@
 import * as express from 'express';
-import { Message } from '@nx-todos/api-interfaces';
 
 const app = express();
 
-const greeting: Message = { message: 'Welcome to api!' };
-
 app.get('/api', (req, res) => {
-  res.send(greeting);
+  res.send('hello world from the API');
 });
 
 const port = process.env.port || 3333;

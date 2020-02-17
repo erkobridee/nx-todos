@@ -21,9 +21,6 @@
     "api": {
       "tags": []
     },
-    "api-interfaces": {
-      "tags": []
-    },
     "shared-data-model": {
       "tags": []
     }
