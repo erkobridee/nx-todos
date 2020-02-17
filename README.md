@@ -140,3 +140,13 @@ nx serve todos
 yarn add uuid
 yard add -D @types/uuid
 ```
+
+5. remove the libs/api-interface and cleanup the nx project references
+
+6. create the code skeleton for the api router (libs/api/router)
+
+`nx g @nrwl/express:lib router --directory=api`
+
+7. code the api data manipulation (libs/api/data)
+
+`nx g @nrwl/express:lib data --directory=api`

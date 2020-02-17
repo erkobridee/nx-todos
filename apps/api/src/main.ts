@@ -1,10 +1,13 @@
 import * as express from 'express';
 
-const app = express();
+import { config as configRouter } from '@nx-todos/api/router';
 
-app.get('/api', (req, res) => {
-  res.send('hello world from the API');
-});
+const app = express();
+const router = express.Router();
+
+configRouter(router);
+
+app.use('/api', router);
 
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {
