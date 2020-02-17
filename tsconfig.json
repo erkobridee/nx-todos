@@ -17,7 +17,9 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-todos/shared/data-model": ["libs/shared/data-model/src/index.ts"]
+      "@nx-todos/shared/data-model": ["libs/shared/data-model/src/index.ts"],
+      "@nx-todos/api/router": ["libs/api/router/src/index.ts"],
+      "@nx-todos/api/data": ["libs/api/data/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

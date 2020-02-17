@@ -23,6 +23,12 @@
     },
     "shared-data-model": {
       "tags": []
+    },
+    "api-router": {
+      "tags": []
+    },
+    "api-data": {
+      "tags": []
     }
   }
 }
