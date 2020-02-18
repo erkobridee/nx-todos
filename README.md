@@ -158,3 +158,11 @@ yard add -D @types/uuid
 8. add the axios lib dependency
 
 `yarn add axios`
+
+9. create the todos api lib
+
+`nx g @nrwl/workspace:lib api --directory=todos`
+
+10. add the axios-mock-adapter dependency to help write the jest tests
+
+`yarn add -D axios-mock-adapter`

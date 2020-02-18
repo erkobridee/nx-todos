@@ -16,24 +16,35 @@ const buildResponse = (response: Response, todo: ITodo) => {
   }
 };
 
+enum EndpointPaths {
+  ROOT = '/',
+  ID = '/:id'
+}
+
 export const config = (parentRouter: Router) => {
   const router = express.Router();
 
-  router.get('/', (_: Request, response: Response) => {
+  router.get(EndpointPaths.ROOT, (_: Request, response: Response) => {
     response.send(Todo.list());
   });
 
-  router.get('/:id', (request: Request, response: Response) => {
+  router.get(EndpointPaths.ID, (request: Request, response: Response) => {
     const todo = Todo.get(request.params.id);
     buildResponse(response, todo);
   });
 
-  router.patch('/:id', (request: Request, response: Response) => {
+  router.post(EndpointPaths.ROOT, (request: Request, response: Response) => {
+    const body: Partial<ITodo> = request.body;
+    const todo = Todo.add(body.label);
+    buildResponse(response, todo);
+  });
+
+  router.patch(EndpointPaths.ID, (request: Request, response: Response) => {
     const todo = Todo.toggleCompleted(request.params.id);
     buildResponse(response, todo);
   });
 
-  router.delete('/:id', (request: Request, response: Response) => {
+  router.delete(EndpointPaths.ID, (request: Request, response: Response) => {
     const todo = Todo.remove(request.params.id);
     buildResponse(response, todo);
   });

@@ -1,6 +1,10 @@
 import * as Todo from './Todo';
 
 describe('api / data > Todo', () => {
+  afterEach(() => {
+    Todo.removeAll();
+  });
+
   it('should have an empty array', () => {
     expect(Todo.list()).toHaveLength(0);
   });
@@ -11,15 +15,20 @@ describe('api / data > Todo', () => {
     expect(Todo.list()).toHaveLength(1);
   });
 
+  it('should get one by its id', () => {
+    expect(Todo.list()).toHaveLength(0);
+    Todo.add('a');
+    const b = Todo.add('b');
+    Todo.add('c');
+    expect(Todo.list()).toHaveLength(3);
+    expect(JSON.stringify(Todo.get(b.id))).toEqual(JSON.stringify(b));
+  });
+
   it('should remove the added one', () => {
+    expect(Todo.list()).toHaveLength(0);
+    const todo = Todo.add('a');
     expect(Todo.list()).toHaveLength(1);
-    const secondItem = Todo.add('world hello');
-    expect(Todo.list()).toHaveLength(2);
-    const fistItem = Todo.list()[0];
-    expect(fistItem.id).not.toEqual(secondItem.id);
-    expect(Todo.remove(fistItem.id).id).toEqual(fistItem.id);
-    expect(Todo.list()).toHaveLength(1);
-    expect(Todo.remove(secondItem.id).id).toEqual(secondItem.id);
+    expect(Todo.remove(todo.id).id).toEqual(todo.id);
     expect(Todo.list()).toHaveLength(0);
   });
 
@@ -47,6 +56,8 @@ describe('api / data > Todo', () => {
   });
 
   it('should remove all', () => {
+    Todo.add('a');
+    Todo.add('b');
     expect(Todo.list()).toHaveLength(2);
     Todo.removeAll();
     expect(Todo.list()).toHaveLength(0);

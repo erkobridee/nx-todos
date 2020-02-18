@@ -244,6 +244,34 @@
           }
         }
       }
+    },
+    "todos-api": {
+      "root": "libs/todos/api",
+      "sourceRoot": "libs/todos/api/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/todos/api/.eslintrc",
+            "tsConfig": [
+              "libs/todos/api/tsconfig.lib.json",
+              "libs/todos/api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/todos/api/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/todos/api/jest.config.js",
+            "tsConfig": "libs/todos/api/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

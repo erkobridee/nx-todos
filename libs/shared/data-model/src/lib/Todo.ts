@@ -8,8 +8,8 @@ export interface ITodo {
   isCompleted: boolean;
 }
 
-export const buildTodo = (label: string): ITodo => ({
-  id: uuidv4(),
+export const buildTodo = (label: string, id: string = uuidv4()): ITodo => ({
+  id,
   label,
   isCompleted: false
 });
