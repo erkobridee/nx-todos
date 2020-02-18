@@ -170,3 +170,12 @@ yard add -D @types/uuid
 11. create a shared helpers lib
 
 `nx g @nrwl/workspace:lib helpers --directory=shared`
+
+12. create a shared redux helpers lib
+
+`nx g @nrwl/workspace:lib redux-helpers --directory=shared`
+
+```
+yarn add redux react-redux redux-thunk
+yarn add -D @types/react-redux
+```

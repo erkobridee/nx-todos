@@ -21,7 +21,10 @@
       "@nx-todos/api/router": ["libs/api/router/src/index.ts"],
       "@nx-todos/api/data": ["libs/api/data/src/index.ts"],
       "@nx-todos/todos/api": ["libs/todos/api/src/index.ts"],
-      "@nx-todos/shared/helpers": ["libs/shared/helpers/src/index.ts"]
+      "@nx-todos/shared/helpers": ["libs/shared/helpers/src/index.ts"],
+      "@nx-todos/shared/redux-helpers": [
+        "libs/shared/redux-helpers/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -35,6 +35,9 @@
     },
     "shared-helpers": {
       "tags": []
+    },
+    "shared-redux-helpers": {
+      "tags": []
     }
   }
 }

@@ -300,6 +300,34 @@
           }
         }
       }
+    },
+    "shared-redux-helpers": {
+      "root": "libs/shared/redux-helpers",
+      "sourceRoot": "libs/shared/redux-helpers/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/shared/redux-helpers/.eslintrc",
+            "tsConfig": [
+              "libs/shared/redux-helpers/tsconfig.lib.json",
+              "libs/shared/redux-helpers/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/redux-helpers/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/redux-helpers/jest.config.js",
+            "tsConfig": "libs/shared/redux-helpers/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
