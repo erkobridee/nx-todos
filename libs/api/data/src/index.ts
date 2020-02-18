@@ -1,1 +1,3 @@
-export * from './lib/Todos';
+import * as Todo from './lib/Todo';
+
+export { Todo };
