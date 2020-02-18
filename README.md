@@ -154,3 +154,7 @@ yard add -D @types/uuid
 7. code the api data manipulation (libs/api/data)
 
 `nx g @nrwl/express:lib data --directory=api`
+
+8. add the axios lib dependency
+
+`yarn add axios`
