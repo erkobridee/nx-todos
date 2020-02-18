@@ -24,7 +24,8 @@
       "@nx-todos/shared/helpers": ["libs/shared/helpers/src/index.ts"],
       "@nx-todos/shared/redux-helpers": [
         "libs/shared/redux-helpers/src/index.ts"
-      ]
+      ],
+      "@nx-todos/todos/redux": ["libs/todos/redux/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

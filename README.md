@@ -179,3 +179,7 @@ yard add -D @types/uuid
 yarn add redux react-redux redux-thunk
 yarn add -D @types/react-redux
 ```
+
+13. create the todos redux lib (react redux following the re-ducks pattern)
+
+`nx g @nrwl/workspace:lib redux --directory=todos`

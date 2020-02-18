@@ -38,6 +38,9 @@
     },
     "shared-redux-helpers": {
       "tags": []
+    },
+    "todos-redux": {
+      "tags": []
     }
   }
 }
