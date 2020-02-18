@@ -32,6 +32,9 @@
     },
     "todos-api": {
       "tags": []
+    },
+    "shared-helpers": {
+      "tags": []
     }
   }
 }

@@ -166,3 +166,7 @@ yard add -D @types/uuid
 10. add the axios-mock-adapter dependency to help write the jest tests
 
 `yarn add -D axios-mock-adapter`
+
+11. create a shared helpers lib
+
+`nx g @nrwl/workspace:lib helpers --directory=shared`
