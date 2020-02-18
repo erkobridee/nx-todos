@@ -83,7 +83,7 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
 - Visit the [Nx Documentation](https://nx.dev) to learn more.
 
-  - [CLI commandas to a React project with Nx](https://nx.dev/react/api/home)
+  - [CLI commands to a React project with Nx](https://nx.dev/react/api/home)
 
 - [[GitHub] nrwl/nx-examples](https://github.com/nrwl/nx-examples)
 
