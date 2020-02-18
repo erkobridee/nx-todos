@@ -85,7 +85,11 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
   - [CLI commands to a React project with Nx](https://nx.dev/react/api/home)
 
-- [[GitHub] nrwl/nx-examples](https://github.com/nrwl/nx-examples)
+  - [Using Nx at Enterprises](https://nx.dev/react/guides/monorepo-nx-enterprise)
+
+  - [[GitHub] nrwl/nx-examples](https://github.com/nrwl/nx-examples)
+
+  - [[GitHub] nrwl/board-game-hoard](https://github.com/nrwl/board-game-hoard)
 
 ---
 
