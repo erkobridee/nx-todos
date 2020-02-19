@@ -1,9 +1,9 @@
 module.exports = {
-  name: 'todos-api',
+  name: 'todos-api-calls',
   preset: '../../../jest.config.js',
   transform: {
     '^.+\\.[tj]sx?$': 'ts-jest'
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html'],
-  coverageDirectory: '../../../coverage/libs/todos/api'
+  coverageDirectory: '../../../coverage/libs/todos/api-calls'
 };

@@ -7,7 +7,7 @@ import { Dispatch } from 'redux';
 import { TFunction } from '@nx-todos/shared/helpers';
 import { ITodo } from '@nx-todos/shared/data-model';
 
-import * as TodosAPI from '@nx-todos/todos/api';
+import * as TodosAPI from '@nx-todos/todos/api-calls';
 
 import * as Actions from './actions';
 import { ITodosAction } from './definitions';

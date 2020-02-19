@@ -245,9 +245,9 @@
         }
       }
     },
-    "todos-api": {
-      "root": "libs/todos/api",
-      "sourceRoot": "libs/todos/api/src",
+    "todos-api-calls": {
+      "root": "libs/todos/api-calls",
+      "sourceRoot": "libs/todos/api-calls/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -255,19 +255,19 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/todos/api/.eslintrc",
+            "config": "libs/todos/api-calls/.eslintrc",
             "tsConfig": [
-              "libs/todos/api/tsconfig.lib.json",
-              "libs/todos/api/tsconfig.spec.json"
+              "libs/todos/api-calls/tsconfig.lib.json",
+              "libs/todos/api-calls/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/todos/api/**"]
+            "exclude": ["**/node_modules/**", "!libs/todos/api-calls/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/todos/api/jest.config.js",
-            "tsConfig": "libs/todos/api/tsconfig.spec.json",
+            "jestConfig": "libs/todos/api-calls/jest.config.js",
+            "tsConfig": "libs/todos/api-calls/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
