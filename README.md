@@ -183,3 +183,7 @@ yarn add -D @types/react-redux
 13. create the todos redux lib (react redux following the re-ducks pattern)
 
 `nx g @nrwl/workspace:lib redux --directory=todos`
+
+14. create the todos wrapper lib (wraps the redux and any other provider needed)
+
+`nx g @nrwl/react:lib wrapper --directory=todos`

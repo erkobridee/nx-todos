@@ -41,6 +41,9 @@
     },
     "todos-redux": {
       "tags": []
+    },
+    "todos-wrapper": {
+      "tags": []
     }
   }
 }

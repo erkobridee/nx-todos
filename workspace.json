@@ -356,6 +356,34 @@
           }
         }
       }
+    },
+    "todos-wrapper": {
+      "root": "libs/todos/wrapper",
+      "sourceRoot": "libs/todos/wrapper/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/todos/wrapper/.eslintrc",
+            "tsConfig": [
+              "libs/todos/wrapper/tsconfig.lib.json",
+              "libs/todos/wrapper/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/todos/wrapper/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/todos/wrapper/jest.config.js",
+            "tsConfig": "libs/todos/wrapper/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
