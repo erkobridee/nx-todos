@@ -65,7 +65,7 @@ Run `nx affected:test` to execute the unit tests affected by a change.
 
 ## Running end-to-end tests
 
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
+Run `ng e2e my-app-e2e` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
 
 Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
 
@@ -187,3 +187,13 @@ yarn add -D @types/react-redux
 14. create the todos wrapper lib (wraps the redux and any other provider needed)
 
 `nx g @nrwl/react:lib wrapper --directory=todos`
+
+15. create the todos ui-components lib
+
+`nx g @nrwl/react:lib ui-components --directory=todos`
+
+initially defined the Layout component and move the contend from the todos application src/App into it
+
+also added a new project dependency to the components
+
+`yarn add classnames`
