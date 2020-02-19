@@ -7,33 +7,33 @@ export const selectTodosState = (state: IRootState) => state.todos;
 
 //----------------------------------------------------------------------------//
 
-export const selectTodos = (state: IRootState) => selectTodos(state).todos;
+export const selectTodos = (state: IRootState) => selectTodosState(state).todos;
 
 export const selectIsTodosFetching = (state: IRootState) =>
-  selectTodos(state).isTodosFetching;
+  selectTodosState(state).isTodosFetching;
 
 export const selectIsTodosFetched = (state: IRootState) =>
-  selectTodos(state).isTodosFetched;
+  selectTodosState(state).isTodosFetched;
 
 export const selectIsTodosFetchFailed = (state: IRootState) =>
-  selectTodos(state).isTodosFetchFailed;
+  selectTodosState(state).isTodosFetchFailed;
 
 //----------------------------------------------------------------------------//
 
-export const selectTodo = (state: IRootState) => selectTodos(state).todo;
+export const selectTodo = (state: IRootState) => selectTodosState(state).todo;
 
 export const selectIsTodoFetching = (state: IRootState) =>
-  selectTodos(state).isTodoFetching;
+  selectTodosState(state).isTodoFetching;
 
 export const selectIsTodoFetched = (state: IRootState) =>
-  selectTodos(state).isTodoFetched;
+  selectTodosState(state).isTodoFetched;
 
 export const selectIsTodoFetchFailed = (state: IRootState) =>
-  selectTodos(state).isTodoFetchFailed;
+  selectTodosState(state).isTodoFetchFailed;
 
 //----------------------------------------------------------------------------//
 
 export const selectFetchFailedError = (state: IRootState) =>
-  selectTodos(state).fetchFailedError;
+  selectTodosState(state).fetchFailedError;
 
 //----------------------------------------------------------------------------//

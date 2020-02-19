@@ -75,7 +75,7 @@ export const todoFetchSuccess: TActionFunction<
   ITodo,
   ITodosAction<ITodo>
 > = payload => ({
-  type: Types.TODOS_FETCH_SUCCESS,
+  type: Types.TODO_FETCH_SUCCESS,
   payload
 });
 
@@ -90,7 +90,7 @@ export const todoFetchFailure: TActionFunction<
   IError,
   ITodosAction<IError>
 > = payload => ({
-  type: Types.TODOS_FETCH_FAILURE,
+  type: Types.TODO_FETCH_FAILURE,
   payload
 });
 

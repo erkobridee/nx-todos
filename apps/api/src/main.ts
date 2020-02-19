@@ -5,6 +5,9 @@ import { config as configRouter } from '@nx-todos/api/router';
 const app = express();
 const router = express.Router();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 configRouter(router);
 
 app.use('/api', router);

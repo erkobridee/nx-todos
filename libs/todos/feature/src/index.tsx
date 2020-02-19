@@ -1,9 +1,11 @@
 import * as React from 'react';
 import cn from 'classnames';
 
+import TodoAdd from './Add';
+import TodosList from './List';
+
 import './_styles.scss';
 
-/* eslint-disable-next-line */
 export interface ITodosFeatureProps {
   className?: string;
 }
@@ -13,7 +15,8 @@ export const TodosFeature: React.FunctionComponent<ITodosFeatureProps> = ({
 }) => {
   return (
     <div className={cn('todos', className)}>
-      <h1>Welcome to todos-feature component!</h1>
+      <TodoAdd className="todos__add" />
+      <TodosList className="todos__list" />
     </div>
   );
 };

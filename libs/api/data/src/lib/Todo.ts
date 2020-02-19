@@ -18,7 +18,11 @@ const filterNotTodo = (id: string) => (item: ITodo) => item.id !== id;
 
 //----------------------------------------------------------------------------//
 
-let todos: ITodo[] = [] as ITodo[];
+let todos: ITodo[] = [
+  buildTodo('my first todo'),
+  buildTodo('my second todo'),
+  buildTodo('my third todo')
+] as ITodo[];
 
 export const list = () => [...todos];
 

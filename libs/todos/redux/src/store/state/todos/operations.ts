@@ -33,6 +33,8 @@ const singleTodoCall = (
     dispatch(Actions.todoFetchRequest());
     const data = await apiCallFn(...args);
     dispatch(Actions.todoFetchSuccess(data));
+
+    list()(dispatch);
   } catch (error) {
     dispatch(
       Actions.todoFetchFailure(TodosAPI.handleApiError(methodName, error))

@@ -1,0 +1,14 @@
+.todos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  &__add {
+    flex: 0;
+  }
+
+  &__list {
+    flex: 1;
+  }
+}
