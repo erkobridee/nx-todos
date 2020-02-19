@@ -27,7 +27,10 @@
       ],
       "@nx-todos/todos/redux": ["libs/todos/redux/src/index.ts"],
       "@nx-todos/todos/wrapper": ["libs/todos/wrapper/src/index.ts"],
-      "@nx-todos/todos/ui-components": ["libs/todos/ui-components/src/index.ts"]
+      "@nx-todos/todos/ui-components": [
+        "libs/todos/ui-components/src/index.ts"
+      ],
+      "@nx-todos/todos/feature": ["libs/todos/feature/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

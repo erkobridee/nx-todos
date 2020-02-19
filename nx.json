@@ -47,6 +47,9 @@
     },
     "todos-ui-components": {
       "tags": []
+    },
+    "todos-feature": {
+      "tags": []
     }
   }
 }
