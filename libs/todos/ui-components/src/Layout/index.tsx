@@ -2,6 +2,7 @@ import * as React from 'react';
 import cn from 'classnames';
 
 import LayoutHeader from './Header';
+import LayoutFooter from './Footer';
 
 import './_styles.scss';
 
@@ -17,7 +18,7 @@ export const Layout: React.FunctionComponent<ILayoutProps> = ({
     <div className="layout__container">
       <LayoutHeader className="layout__header" />
       <div className="layout__content">{children}</div>
-      <div className="layout__footer">???</div>
+      <LayoutFooter className="layout__footer" />
     </div>
   </div>
 );

@@ -1,0 +1,13 @@
+.layout-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem 0;
+  font-size: 1.2rem;
+
+  &__logo {
+    margin-left: 1rem;
+  }
+}
