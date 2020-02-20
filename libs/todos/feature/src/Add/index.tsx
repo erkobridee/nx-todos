@@ -21,6 +21,8 @@ export const TodoAdd: React.FunctionComponent<ITodoAddProps> = ({
 }) => {
   const dispatch = useDispatch();
 
+  const inputRef = React.createRef<HTMLInputElement>();
+
   const [value, setValue] = React.useState('');
   const [isAddDisabled, setIsAddDisabled] = React.useState(true);
 
@@ -38,6 +40,10 @@ export const TodoAdd: React.FunctionComponent<ITodoAddProps> = ({
     setValue(currentTarget.value);
   };
 
+  const setInputFocus = () => {
+    inputRef.current.focus();
+  };
+
   React.useEffect(() => {
     setIsAddDisabled(isTodoFetching || value.length === 0);
   }, [value, isTodoFetching]);
@@ -45,12 +51,18 @@ export const TodoAdd: React.FunctionComponent<ITodoAddProps> = ({
   React.useEffect(() => {
     if (isTodoFetched) {
       setValue('');
+      setInputFocus();
     }
   }, [isTodoFetched]);
+
+  React.useEffect(() => {
+    setInputFocus();
+  }, []);
 
   return (
     <div className={cn('todo-add', className)}>
       <InputText
+        inputRef={inputRef}
         className="todo-add__field"
         value={value}
         onChange={onTextChangeHandler}

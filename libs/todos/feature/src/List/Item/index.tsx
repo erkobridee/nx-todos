@@ -1,8 +1,10 @@
 import * as React from 'react';
 import cn from 'classnames';
+import { useDispatch } from 'react-redux';
 
 import { ITodo } from '@nx-todos/shared/data-model';
 
+import { Operations } from '@nx-todos/todos/redux';
 import Button from '@nx-todos/todos/ui-components/Button';
 import ButtonsGroup from '@nx-todos/todos/ui-components/ButtonsGroup';
 import InputText from '@nx-todos/todos/ui-components/InputText';
@@ -28,37 +30,42 @@ export const TodosListItem: React.FunctionComponent<ITodosListItemProps> = ({
   data,
   onEditing
 }) => {
+  const dispatch = useDispatch();
+
   const checkerRef = React.createRef<HTMLInputElement>();
   const inputRef = React.createRef<HTMLInputElement>();
 
   const [uiState, setUiState] = React.useState<UIState>(UIState.VIEW);
 
-  const onSaveClick = () => {
-    const { value } = inputRef.current;
-
-    if (data.label !== value) {
-      onEditing('');
-      console.log('call the api to save the todo');
-      console.log('input value: ', value);
-    }
-  };
-
-  const onCancelClick = () => {
+  const switchToViewUI = () => {
     onEditing('');
     setUiState(UIState.VIEW);
   };
 
-  const onEditClick = () => {
+  const switchToEditUI = () => {
     onEditing(data.id);
     setUiState(UIState.EDIT);
   };
 
+  const onSaveClick = () => {
+    const { value } = inputRef.current;
+
+    if (data.label !== value) {
+      switchToViewUI();
+      dispatch(Operations.todos.updateLabel(data.id, value));
+    }
+  };
+
+  const onCancelClick = switchToViewUI;
+
+  const onEditClick = switchToEditUI;
+
   const onRemoveClick = () => {
-    console.log('call the api to remove the todo');
+    dispatch(Operations.todos.remove(data.id));
   };
 
   const onCompletedCheckerChange = () => {
-    console.log('completed: ', checkerRef.current.checked);
+    dispatch(Operations.todos.toggleCompleted(data.id));
   };
 
   const buildUI = () => {
@@ -119,6 +126,12 @@ export const TodosListItem: React.FunctionComponent<ITodosListItemProps> = ({
         );
     }
   };
+
+  React.useEffect(() => {
+    if (uiState === UIState.EDIT) {
+      inputRef.current.focus();
+    }
+  }, [uiState, inputRef]);
 
   return <div className={cn('todos-list-item', className)}>{buildUI()}</div>;
 };
