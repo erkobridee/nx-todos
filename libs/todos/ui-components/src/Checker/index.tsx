@@ -12,13 +12,17 @@ export interface ICheckerProps<T = HTMLInputElement>
 export const Checker: React.FunctionComponent<ICheckerProps> = ({
   className,
   inputRef,
+  disabled,
   ...otherProps
 }) => (
-  <label className={cn('checker', className)}>
+  <label
+    className={cn('checker', className, { 'checker--disabled': disabled })}
+  >
     <input
       className="checkbox"
       type="checkbox"
       ref={inputRef}
+      disabled={disabled}
       {...otherProps}
     />
     <div className="check-bg"></div>

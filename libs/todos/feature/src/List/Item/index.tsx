@@ -17,12 +17,16 @@ enum UIState {
 
 export interface ITodosListItemProps {
   className?: string;
+  disabled?: boolean;
   data: ITodo;
+  onEditing: (todoId: string) => void;
 }
 
 export const TodosListItem: React.FunctionComponent<ITodosListItemProps> = ({
   className,
-  data
+  disabled = false,
+  data,
+  onEditing
 }) => {
   const checkerRef = React.createRef<HTMLInputElement>();
   const inputRef = React.createRef<HTMLInputElement>();
@@ -33,16 +37,19 @@ export const TodosListItem: React.FunctionComponent<ITodosListItemProps> = ({
     const { value } = inputRef.current;
 
     if (data.label !== value) {
+      onEditing('');
       console.log('call the api to save the todo');
       console.log('input value: ', value);
     }
   };
 
   const onCancelClick = () => {
+    onEditing('');
     setUiState(UIState.VIEW);
   };
 
   const onEditClick = () => {
+    onEditing(data.id);
     setUiState(UIState.EDIT);
   };
 
@@ -86,17 +93,23 @@ export const TodosListItem: React.FunctionComponent<ITodosListItemProps> = ({
                 inputRef={checkerRef}
                 defaultChecked={data.isCompleted}
                 onChange={onCompletedCheckerChange}
+                disabled={disabled}
               />
             </div>
             <div className="todos-list-item__label">{data.label}</div>
             <div className="todos-list-item__btns">
               <ButtonsGroup>
-                <Button className="todos-list-item__btn" onClick={onEditClick}>
+                <Button
+                  className="todos-list-item__btn"
+                  onClick={onEditClick}
+                  disabled={disabled}
+                >
                   Edit
                 </Button>
                 <Button
                   className="todos-list-item__btn"
                   onClick={onRemoveClick}
+                  disabled={disabled}
                 >
                   Remove
                 </Button>

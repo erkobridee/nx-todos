@@ -28,6 +28,7 @@ export const TodosList: React.FunctionComponent<ITodosListProps> = ({
   const list = useSelector(Selectors.todos.selectTodos);
 
   const [listType, setListType] = React.useState<ListTypes>(ListTypes.ALL);
+  const [editingTodoId, setEditionTodoId] = React.useState<string>('');
 
   const changeListType = (type: ListTypes) => () => setListType(type);
 
@@ -79,6 +80,8 @@ export const TodosList: React.FunctionComponent<ITodosListProps> = ({
             className="todos-list__item"
             key={item.id}
             data={item}
+            onEditing={setEditionTodoId}
+            disabled={editingTodoId && editingTodoId !== item.id}
           />
         ))}
       </div>
