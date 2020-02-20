@@ -84,7 +84,9 @@ describe('todos / api', () => {
       it('should not found', async () => {
         const errorId = `${id}-404`;
         const responseErrorData: IError = { code: 404, message: 'not found' };
-        mock.onPatch(API.buildApiUrl(errorId)).reply(404, responseErrorData);
+        mock
+          .onPatch(API.buildApiUrl(errorId, 'completed'))
+          .reply(404, responseErrorData);
 
         try {
           await API.toggleCompleted(errorId);
@@ -100,13 +102,51 @@ describe('todos / api', () => {
       it('should be completed', async () => {
         const data = buildTodo('test', id);
         data.isCompleted = true;
-        mock.onPatch(API.buildApiUrl(id)).reply(200, data);
+        mock.onPatch(API.buildApiUrl(id, 'completed')).reply(200, data);
 
         try {
           const responseData = await API.toggleCompleted(id);
 
           expect(data.isCompleted).toBeFalsy();
           expect(responseData.isCompleted).toBeTruthy();
+          expect(JSON.stringify(responseData)).not.toEqual(
+            JSON.stringify(data)
+          );
+        } catch (e) {}
+      });
+    });
+
+    describe('update label', () => {
+      const id = 'test-id';
+
+      it('should not found', async () => {
+        const errorId = `${id}-404`;
+        const responseErrorData: IError = { code: 404, message: 'not found' };
+        mock
+          .onPatch(API.buildApiUrl(errorId, 'label'))
+          .reply(404, responseErrorData);
+
+        try {
+          await API.updateLabel(errorId, 'label to be updated');
+        } catch (e) {
+          const error: AxiosError<IError> = e;
+          expect(error).toBeDefined();
+          expect(JSON.stringify(error.response.data)).toEqual(
+            JSON.stringify(responseErrorData)
+          );
+        }
+      });
+
+      it('should be updated', async () => {
+        const label = 'test label updated';
+        const data = buildTodo(label, id);
+        data.isCompleted = true;
+        mock.onPatch(API.buildApiUrl(id, 'label')).reply(200, data);
+
+        try {
+          const responseData = await API.updateLabel(id, label);
+
+          expect(data.label).toEqual(label);
           expect(JSON.stringify(responseData)).not.toEqual(
             JSON.stringify(data)
           );

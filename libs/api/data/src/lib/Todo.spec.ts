@@ -65,7 +65,7 @@ describe('api / data > Todo', () => {
     expect(list).toHaveLength(3);
     expect(list.map(item => item.label).join('')).toEqual('abc');
 
-    const secondUpdated = Todo.changeLabel(second.id, 'BBB');
+    const secondUpdated = Todo.updateLabel(second.id, 'BBB');
     expect(secondUpdated.label).not.toEqual(second.label);
 
     list = Todo.list();

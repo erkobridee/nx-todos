@@ -50,5 +50,8 @@ export const add = (label: string) =>
 export const toggleCompleted = (id: string) =>
   singleTodoCall('toggle todo completed', TodosAPI.toggleCompleted, id);
 
+export const updateLabel = (id: string, label: string) =>
+  singleTodoCall('toggle todo completed', TodosAPI.updateLabel, id, label);
+
 export const remove = (id: string) =>
   singleTodoCall('remove todo', TodosAPI.remove, id);

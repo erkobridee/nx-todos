@@ -18,7 +18,9 @@ const buildResponse = (response: Response, todo: ITodo) => {
 
 enum EndpointPaths {
   ROOT = '/',
-  ID = '/:id'
+  ID = '/:id',
+  TOOGLE_COMPLETED = '/:id/completed',
+  UPDATE_LABEL = '/:id/label'
 }
 
 export const config = (parentRouter: Router) => {
@@ -34,15 +36,27 @@ export const config = (parentRouter: Router) => {
   });
 
   router.post(EndpointPaths.ROOT, (request: Request, response: Response) => {
-    const body: Partial<ITodo> = request.body;
-    const todo = Todo.add(body.label);
+    const { label }: Partial<ITodo> = request.body;
+    const todo = Todo.add(label);
     buildResponse(response, todo);
   });
 
-  router.patch(EndpointPaths.ID, (request: Request, response: Response) => {
-    const todo = Todo.toggleCompleted(request.params.id);
-    buildResponse(response, todo);
-  });
+  router.patch(
+    EndpointPaths.TOOGLE_COMPLETED,
+    (request: Request, response: Response) => {
+      const todo = Todo.toggleCompleted(request.params.id);
+      buildResponse(response, todo);
+    }
+  );
+
+  router.patch(
+    EndpointPaths.UPDATE_LABEL,
+    (request: Request, response: Response) => {
+      const { label }: Partial<ITodo> = request.body;
+      const todo = Todo.updateLabel(request.params.id, label);
+      buildResponse(response, todo);
+    }
+  );
 
   router.delete(EndpointPaths.ID, (request: Request, response: Response) => {
     const todo = Todo.remove(request.params.id);

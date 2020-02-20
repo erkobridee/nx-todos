@@ -32,7 +32,13 @@ export const add = async (label: string) => {
 };
 
 export const toggleCompleted = async (id: string) => {
-  const response = await axios.patch<ITodo>(buildApiUrl(id));
+  const response = await axios.patch<ITodo>(buildApiUrl(id, 'completed'));
+  return response.data;
+};
+
+export const updateLabel = async (id: string, label: string) => {
+  const body: Partial<ITodo> = { label };
+  const response = await axios.patch<ITodo>(buildApiUrl(id, 'label'), body);
   return response.data;
 };
 

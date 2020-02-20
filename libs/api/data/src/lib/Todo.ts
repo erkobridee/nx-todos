@@ -49,7 +49,7 @@ export const toggleCompleted = (id: string, flag?: boolean) => {
   return get(id);
 };
 
-export const changeLabel = (id: string, label: string) => {
+export const updateLabel = (id: string, label: string) => {
   todos = todos.map(mapChangedLabel(id, label));
   return get(id);
 };
