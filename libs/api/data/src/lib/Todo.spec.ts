@@ -1,7 +1,7 @@
 import * as Todo from './Todo';
 
 describe('api / data > Todo', () => {
-  afterEach(() => {
+  beforeEach(() => {
     Todo.removeAll();
   });
 
@@ -53,6 +53,23 @@ describe('api / data > Todo', () => {
     todo = list[0];
     expect(Todo.remove(todo.id).id).toEqual(todo.id);
     expect(Todo.list()).toHaveLength(2);
+  });
+
+  it('should update the todo label', () => {
+    let list = Todo.list();
+    expect(list).toHaveLength(0);
+    Todo.add('a');
+    const second = Todo.add('b');
+    Todo.add('c');
+    list = Todo.list();
+    expect(list).toHaveLength(3);
+    expect(list.map(item => item.label).join('')).toEqual('abc');
+
+    const secondUpdated = Todo.changeLabel(second.id, 'BBB');
+    expect(secondUpdated.label).not.toEqual(second.label);
+
+    list = Todo.list();
+    expect(list.map(item => item.label).join('')).toEqual('aBBBc');
   });
 
   it('should remove all', () => {

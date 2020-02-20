@@ -14,6 +14,16 @@ const mapToggleCompleted = (id: string, flag?: boolean) => (item: ITodo) => {
   return item;
 };
 
+const mapChangedLabel = (id: string, label: string) => (item: ITodo) => {
+  if (item.id === id) {
+    return {
+      ...item,
+      label
+    };
+  }
+  return item;
+};
+
 const filterNotTodo = (id: string) => (item: ITodo) => item.id !== id;
 
 //----------------------------------------------------------------------------//
@@ -36,6 +46,11 @@ export const add = (label: string) => {
 
 export const toggleCompleted = (id: string, flag?: boolean) => {
   todos = todos.map(mapToggleCompleted(id, flag));
+  return get(id);
+};
+
+export const changeLabel = (id: string, label: string) => {
+  todos = todos.map(mapChangedLabel(id, label));
   return get(id);
 };
 
