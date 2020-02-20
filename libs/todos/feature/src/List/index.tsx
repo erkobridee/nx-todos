@@ -19,16 +19,20 @@ enum ListTypes {
 
 export interface ITodosListProps {
   className?: string;
+  onEditing: (isEditing: boolean) => void;
 }
 
 export const TodosList: React.FunctionComponent<ITodosListProps> = ({
-  className
+  className,
+  onEditing
 }) => {
   const dispatch = useDispatch();
   const list = useSelector(Selectors.todos.selectTodos);
+  const isTodoFetching = useSelector(Selectors.todos.selectIsTodoFetching);
 
   const [listType, setListType] = React.useState<ListTypes>(ListTypes.ALL);
-  const [editingTodoId, setEditionTodoId] = React.useState<string>('');
+  const [editingTodoId, setEditingTodoId] = React.useState<string>('');
+  const [isEditing, setIsEditing] = React.useState(false);
 
   const changeListType = (type: ListTypes) => () => setListType(type);
 
@@ -44,6 +48,13 @@ export const TodosList: React.FunctionComponent<ITodosListProps> = ({
     }
   };
 
+  const onEditingHandler = (todoId: string) => {
+    setEditingTodoId(todoId);
+    const flag = !!todoId;
+    onEditing(flag);
+    setIsEditing(flag);
+  };
+
   React.useEffect(() => {
     dispatch(Operations.todos.list());
   }, []);
@@ -55,6 +66,7 @@ export const TodosList: React.FunctionComponent<ITodosListProps> = ({
           className="todos-list__header-btn"
           active={listType === ListTypes.ALL}
           onClick={changeListType(ListTypes.ALL)}
+          disabled={isEditing}
         >
           All
         </Button>
@@ -62,6 +74,7 @@ export const TodosList: React.FunctionComponent<ITodosListProps> = ({
           className="todos-list__header-btn"
           active={listType === ListTypes.INCOMPLETED}
           onClick={changeListType(ListTypes.INCOMPLETED)}
+          disabled={isEditing}
         >
           Incompleted
         </Button>
@@ -69,6 +82,7 @@ export const TodosList: React.FunctionComponent<ITodosListProps> = ({
           className="todos-list__header-btn"
           active={listType === ListTypes.COMPLETED}
           onClick={changeListType(ListTypes.COMPLETED)}
+          disabled={isEditing}
         >
           Completed
         </Button>
@@ -80,8 +94,10 @@ export const TodosList: React.FunctionComponent<ITodosListProps> = ({
             className="todos-list__item"
             key={item.id}
             data={item}
-            onEditing={setEditionTodoId}
-            disabled={editingTodoId && editingTodoId !== item.id}
+            onEditing={onEditingHandler}
+            disabled={
+              isTodoFetching || (editingTodoId && editingTodoId !== item.id)
+            }
           />
         ))}
       </div>

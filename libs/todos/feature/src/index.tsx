@@ -13,10 +13,12 @@ export interface ITodosFeatureProps {
 export const TodosFeature: React.FunctionComponent<ITodosFeatureProps> = ({
   className
 }) => {
+  const [isEditing, setIsEditing] = React.useState(false);
+
   return (
     <div className={cn('todos', className)}>
-      <TodoAdd className="todos__add" />
-      <TodosList className="todos__list" />
+      <TodoAdd className="todos__add" disabled={isEditing} />
+      <TodosList className="todos__list" onEditing={setIsEditing} />
     </div>
   );
 };

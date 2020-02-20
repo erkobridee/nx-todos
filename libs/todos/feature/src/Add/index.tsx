@@ -12,10 +12,12 @@ import './_styles.scss';
 
 export interface ITodoAddProps {
   className?: string;
+  disabled?: boolean;
 }
 
 export const TodoAdd: React.FunctionComponent<ITodoAddProps> = ({
-  className
+  className,
+  disabled = false
 }) => {
   const dispatch = useDispatch();
 
@@ -55,8 +57,8 @@ export const TodoAdd: React.FunctionComponent<ITodoAddProps> = ({
       />
       <Button
         className="todo-add__btn"
-        disabled={isAddDisabled}
         onClick={onAddClickHandler}
+        disabled={disabled || isAddDisabled}
       >
         Add
       </Button>
