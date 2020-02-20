@@ -201,3 +201,33 @@ also added a new project dependency to the components
 16. create the todos feature lib (uses the redux and implements the ToDos list/add/edit feature)
 
 `nx g @nrwl/react:lib feature --directory=todos`
+
+## nx dep-graph
+
+![nx final dep-graph](nx_final_dep-graph.png)
+
+## Findings
+
+- Developing a project which contains an api and a frontend application, you need to have two terminals to run each project, for example in one terminal you run `nx serve api` and in another one you run `nx serve frontend`
+
+- It's really interesting breakdown the application into a smallers libs, so we have a better code isolation, possibility to run tests on that code and also using the `nx dep-graph` have a better understanding of the project code and how the parts of the project relates to each other
+
+  - followed some ideas from [Using Nx at Enterprises](https://nx.dev/react/guides/monorepo-nx-enterprise)
+
+- The libraries created by the nx CLI has a pre-defined code structure ([more information about it here](https://nx.dev/react/tutorial/08-create-libs))
+
+  - The main concept of a library adopted is to be a "Black Box", which what's exposed from the library is defined on the `src/index.ts`
+
+  - It's possible to have more flexibity and expose the whole content from the library (that's really useful to define an ui components library). To do that, you need to reorganize the `src/` folder in the what that you want to access and change the `{project_root_folder}/tsconfig.json` the `paths` configuration alias to be something like
+
+```
+{
+  "paths": {
+    ...
+    "@namespace/ui-components/*": ["libs/ui-components/src/*"]
+    ...
+  }
+}
+```
+
+- When you run the build nx CLI command, for example: `nx build app-name` that will generate the output of the build on the directory `dist/app/app-name`
