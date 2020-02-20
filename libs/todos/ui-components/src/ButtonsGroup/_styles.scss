@@ -1,0 +1,19 @@
+.btns-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .btn {
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid #c9dbf2;
+    }
+  }
+}

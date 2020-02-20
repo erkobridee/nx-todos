@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Selectors, Operations } from '@nx-todos/todos/redux';
 
 import Button from '@nx-todos/todos/ui-components/Button';
+import ButtonsGroup from '@nx-todos/todos/ui-components/ButtonsGroup';
 
 import TodosListItem from './Item';
 
@@ -48,7 +49,7 @@ export const TodosList: React.FunctionComponent<ITodosListProps> = ({
 
   return (
     <div className={cn('todos-list', className)}>
-      <div className="todos-list__header">
+      <ButtonsGroup className="todos-list__header">
         <Button
           className="todos-list__header-btn"
           active={listType === ListTypes.ALL}
@@ -70,7 +71,7 @@ export const TodosList: React.FunctionComponent<ITodosListProps> = ({
         >
           Completed
         </Button>
-      </div>
+      </ButtonsGroup>
 
       <div className="todos-list__items">
         {getFilteredList().map(item => (

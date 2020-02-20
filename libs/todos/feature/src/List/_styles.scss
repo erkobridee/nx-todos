@@ -14,20 +14,6 @@
     flex-direction: row;
     justify-content: center;
     padding: 1rem 0;
-
-    &-btn {
-      &:first-child {
-        border-radius: 5px 0 0 5px;
-      }
-
-      &:last-child {
-        border-radius: 0 5px 5px 0;
-      }
-
-      &:not(:last-child) {
-        border-right: 1px solid #c9dbf2;
-      }
-    }
   }
 
   &__item:not(:last-child) {

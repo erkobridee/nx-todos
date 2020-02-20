@@ -3,11 +3,9 @@ import cn from 'classnames';
 
 import './_styles.scss';
 
-export interface IInputTextProps
-  extends React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > {
+export interface IInputTextProps<T = HTMLInputElement>
+  extends React.DetailedHTMLProps<React.InputHTMLAttributes<T>, T> {
+  inputRef?: React.Ref<T>;
   className?: string;
   renderBorder?: boolean;
 }
@@ -15,6 +13,7 @@ export interface IInputTextProps
 export const InputText: React.FunctionComponent<IInputTextProps> = ({
   className,
   renderBorder = true,
+  inputRef,
   type,
   ...otherProps
 }) => {
@@ -26,7 +25,7 @@ export const InputText: React.FunctionComponent<IInputTextProps> = ({
         'input-text--border': renderBorder
       })}
     >
-      <input type={type} {...otherProps} />
+      <input ref={inputRef} type={type} {...otherProps} />
     </div>
   );
 };
