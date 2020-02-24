@@ -10,6 +10,8 @@ This project was generated using [Nx](https://nx.dev).
 
   - [Build a To-Do application Using Django and React | Scotch.io](https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react)
 
+ℹ️ use the node.js v12.16.1 LTS
+
 ## Goal
 
 - test a monorepository structure in a more entreprise scenario
