@@ -41,8 +41,6 @@ Run `nx g @nrwl/react:lib my-lib` to generate a library.
 
 > You can also use any of the plugins above to generate libraries as well.
 
-Libraries are sharable across libraries and applications. They can be imported from `@nx-todos/mylib`.
-
 ## Development server
 
 Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
@@ -73,6 +71,10 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
 ## Further help
 
+- [How to develop React apps like Facebook, Microsoft, and Google | Nrwl](https://blog.nrwl.io/how-to-develop-react-apps-like-facebook-microsoft-and-google-bdcafcfbc9be)
+
+- [React Microfrontends and Monorepos: A Perfect Match | Nrwl](https://blog.nrwl.io/monorepos-and-react-microfrontends-a-perfect-match-d49dca64489a)
+
 - [[YouTube] Nx: Extensible Dev Tools for Monorepos (React)](https://www.youtube.com/watch?v=E188J7E_MDU)
 
 - [[YouTube playlist] Nx Workspaces Course (Free version) - By Nrwl](https://www.youtube.com/watch?v=2mYLe9Kp9VM&list=PLakNactNC1dH38AfqmwabvOszDmKriGco)
@@ -81,13 +83,13 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
 - Visit the [Nx Documentation](https://nx.dev) to learn more.
 
-  - [CLI commands to a React project with Nx](https://nx.dev/react/api/home)
+  - [Nx CLI](https://nx.dev/react/guides/cli)
+
+    - [CLI commands to a React project with Nx](https://nx.dev/react/api/home)
 
   - [Using Nx at Enterprises](https://nx.dev/react/guides/monorepo-nx-enterprise)
 
-  - [[GitHub] nrwl/nx-examples](https://github.com/nrwl/nx-examples)
-
-  - [[GitHub] nrwl/board-game-hoard](https://github.com/nrwl/board-game-hoard)
+  - [Rebuilding and Retesting What is Affected](https://nx.dev/react/guides/monorepo-affected)
 
 ---
 
@@ -104,3 +106,13 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
   - [[GitHub] nrwl/nx-console](https://github.com/nrwl/nx-console)
 
   - [VSCode Plugin](https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console)
+
+## Project examples
+
+- [[GitHub] erkobridee / nx-hello](https://github.com/erkobridee/nx-hello)
+
+- [[GitHub] nrwl/nx-examples](https://github.com/nrwl/nx-examples)
+
+- [[GitHub] nrwl/board-game-hoard](https://github.com/nrwl/board-game-hoard)
+
+- [[GitHub] nrwl/nx-azure-build](https://github.com/nrwl/nx-azure-build) - Example of setting up distributed Azure build for Nx workspace
