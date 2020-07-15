@@ -18,7 +18,8 @@
             "assets": ["apps/todos/src/favicon.ico", "apps/todos/src/assets"],
             "styles": ["apps/todos/src/styles.scss"],
             "scripts": [],
-            "webpackConfig": "@nrwl/react/plugins/webpack"
+            "webpackConfig": "@nrwl/react/plugins/webpack",
+            "buildLibsFromSource": true
           },
           "configurations": {
             "production": {
@@ -61,12 +62,11 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "apps/todos/.eslintrc",
             "tsConfig": [
               "apps/todos/tsconfig.app.json",
               "apps/todos/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/todos/**"]
+            "exclude": ["**/node_modules/**", "!apps/todos/**/*"]
           }
         },
         "test": {
@@ -101,9 +101,8 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "apps/todos-e2e/.eslintrc",
             "tsConfig": ["apps/todos-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/todos-e2e/**"]
+            "exclude": ["**/node_modules/**", "!apps/todos-e2e/**/*"]
           }
         }
       }
@@ -121,7 +120,8 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": ["apps/api/src/assets"],
+            "buildLibsFromSource": true
           },
           "configurations": {
             "production": {
@@ -147,12 +147,11 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "apps/api/.eslintrc",
             "tsConfig": [
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/api/**"]
+            "exclude": ["**/node_modules/**", "!apps/api/**/*"]
           }
         },
         "test": {
@@ -175,12 +174,11 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/shared/data-model/.eslintrc",
             "tsConfig": [
               "libs/shared/data-model/tsconfig.lib.json",
               "libs/shared/data-model/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/data-model/**"]
+            "exclude": ["**/node_modules/**", "!libs/shared/data-model/**/*"]
           }
         },
         "test": {
@@ -206,7 +204,7 @@
               "libs/api/router/tsconfig.lib.json",
               "libs/api/router/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/api/router/**"]
+            "exclude": ["**/node_modules/**", "!libs/api/router/**/*"]
           }
         },
         "test": {
@@ -232,7 +230,7 @@
               "libs/api/data/tsconfig.lib.json",
               "libs/api/data/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/api/data/**"]
+            "exclude": ["**/node_modules/**", "!libs/api/data/**/*"]
           }
         },
         "test": {
@@ -255,12 +253,11 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/todos/api-calls/.eslintrc",
             "tsConfig": [
               "libs/todos/api-calls/tsconfig.lib.json",
               "libs/todos/api-calls/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/todos/api-calls/**"]
+            "exclude": ["**/node_modules/**", "!libs/todos/api-calls/**/*"]
           }
         },
         "test": {
@@ -283,12 +280,11 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/shared/helpers/.eslintrc",
             "tsConfig": [
               "libs/shared/helpers/tsconfig.lib.json",
               "libs/shared/helpers/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/helpers/**"]
+            "exclude": ["**/node_modules/**", "!libs/shared/helpers/**/*"]
           }
         },
         "test": {
@@ -311,12 +307,11 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/shared/redux-helpers/.eslintrc",
             "tsConfig": [
               "libs/shared/redux-helpers/tsconfig.lib.json",
               "libs/shared/redux-helpers/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/redux-helpers/**"]
+            "exclude": ["**/node_modules/**", "!libs/shared/redux-helpers/**/*"]
           }
         },
         "test": {
@@ -339,12 +334,11 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/todos/redux/.eslintrc",
             "tsConfig": [
               "libs/todos/redux/tsconfig.lib.json",
               "libs/todos/redux/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/todos/redux/**"]
+            "exclude": ["**/node_modules/**", "!libs/todos/redux/**/*"]
           }
         },
         "test": {
@@ -367,12 +361,11 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/todos/wrapper/.eslintrc",
             "tsConfig": [
               "libs/todos/wrapper/tsconfig.lib.json",
               "libs/todos/wrapper/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/todos/wrapper/**"]
+            "exclude": ["**/node_modules/**", "!libs/todos/wrapper/**/*"]
           }
         },
         "test": {
@@ -395,12 +388,11 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/todos/ui-components/.eslintrc",
             "tsConfig": [
               "libs/todos/ui-components/tsconfig.lib.json",
               "libs/todos/ui-components/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/todos/ui-components/**"]
+            "exclude": ["**/node_modules/**", "!libs/todos/ui-components/**/*"]
           }
         },
         "test": {
@@ -423,12 +415,11 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/todos/feature/.eslintrc",
             "tsConfig": [
               "libs/todos/feature/tsconfig.lib.json",
               "libs/todos/feature/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/todos/feature/**"]
+            "exclude": ["**/node_modules/**", "!libs/todos/feature/**/*"]
           }
         },
         "test": {
