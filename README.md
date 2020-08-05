@@ -54,3 +54,7 @@ This project was generated using [Nx](https://nx.dev).
 ```
 
 - When you run the build Nx CLI command, for example, `nx build app-name` that will generate the output of the build on the directory `dist/app/app-name`
+
+- Running the frontend and backend together, based on the following [tweet](https://twitter.com/juristr/status/1290398409283850243)
+
+  - `nx run-many --target=serve --projects=todos,api --parallel=true`
