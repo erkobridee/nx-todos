@@ -73,7 +73,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/todos/jest.config.js",
-            "tsConfig": "apps/todos/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -158,7 +157,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/api/jest.config.js",
-            "tsConfig": "apps/api/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -185,7 +183,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/data-model/jest.config.js",
-            "tsConfig": "libs/shared/data-model/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -211,7 +208,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/api/router/jest.config.js",
-            "tsConfig": "libs/api/router/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -237,7 +233,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/api/data/jest.config.js",
-            "tsConfig": "libs/api/data/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -264,7 +259,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/todos/api-calls/jest.config.js",
-            "tsConfig": "libs/todos/api-calls/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -291,7 +285,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/helpers/jest.config.js",
-            "tsConfig": "libs/shared/helpers/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -318,7 +311,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/redux-helpers/jest.config.js",
-            "tsConfig": "libs/shared/redux-helpers/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -345,7 +337,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/todos/redux/jest.config.js",
-            "tsConfig": "libs/todos/redux/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -372,7 +363,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/todos/wrapper/jest.config.js",
-            "tsConfig": "libs/todos/wrapper/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -399,7 +389,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/todos/ui-components/jest.config.js",
-            "tsConfig": "libs/todos/ui-components/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -426,7 +415,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/todos/feature/jest.config.js",
-            "tsConfig": "libs/todos/feature/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }

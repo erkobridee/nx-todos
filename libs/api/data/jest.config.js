@@ -2,8 +2,9 @@ module.exports = {
   name: 'api-data',
   preset: '../../../jest.config.js',
   transform: {
-    '^.+\\.[tj]sx?$': 'ts-jest'
+    '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html'],
-  coverageDirectory: '../../../coverage/libs/api/data'
+  coverageDirectory: '../../../coverage/libs/api/data',
+  globals: { 'ts-jest': { tsConfig: '<rootDir>/tsconfig.spec.json' } },
 };
