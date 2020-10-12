@@ -59,14 +59,21 @@
           }
         },
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "apps/todos/tsconfig.app.json",
-              "apps/todos/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!apps/todos/**/*"]
+            "lintFilePatterns": [
+              "apps/todos/**/*.js",
+              "apps/todos/**/*.jsx",
+              "apps/todos/**/*.ts",
+              "apps/todos/**/*.tsx",
+              "node_modules/@nrwl/react/typings/cssmodule.d.ts",
+              "node_modules/@nrwl/react/typings/image.d.ts",
+              "apps/todos/**/*.spec.ts",
+              "apps/todos/**/*.spec.tsx",
+              "apps/todos/**/*.spec.js",
+              "apps/todos/**/*.spec.jsx",
+              "apps/todos/**/*.d.ts"
+            ]
           }
         },
         "test": {
@@ -97,11 +104,12 @@
           }
         },
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": ["apps/todos-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/todos-e2e/**/*"]
+            "lintFilePatterns": [
+              "apps/todos-e2e/src/**/*.ts",
+              "apps/todos-e2e/src/**/*.js"
+            ]
           }
         }
       }
@@ -143,14 +151,13 @@
           }
         },
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "apps/api/tsconfig.app.json",
-              "apps/api/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!apps/api/**/*"]
+            "lintFilePatterns": [
+              "apps/api/**/*.ts",
+              "apps/api/**/*.spec.ts",
+              "apps/api/**/*.d.ts"
+            ]
           }
         },
         "test": {
@@ -169,14 +176,16 @@
       "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/shared/data-model/tsconfig.lib.json",
-              "libs/shared/data-model/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/data-model/**/*"]
+            "lintFilePatterns": [
+              "libs/shared/data-model/**/*.ts",
+              "libs/shared/data-model/**/*.spec.ts",
+              "libs/shared/data-model/**/*.spec.tsx",
+              "libs/shared/data-model/**/*.spec.js",
+              "libs/shared/data-model/**/*.spec.jsx",
+              "libs/shared/data-model/**/*.d.ts"
+            ]
           }
         },
         "test": {
@@ -245,14 +254,16 @@
       "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/todos/api-calls/tsconfig.lib.json",
-              "libs/todos/api-calls/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/todos/api-calls/**/*"]
+            "lintFilePatterns": [
+              "libs/todos/api-calls/**/*.ts",
+              "libs/todos/api-calls/**/*.spec.ts",
+              "libs/todos/api-calls/**/*.spec.tsx",
+              "libs/todos/api-calls/**/*.spec.js",
+              "libs/todos/api-calls/**/*.spec.jsx",
+              "libs/todos/api-calls/**/*.d.ts"
+            ]
           }
         },
         "test": {
@@ -271,14 +282,16 @@
       "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/shared/helpers/tsconfig.lib.json",
-              "libs/shared/helpers/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/helpers/**/*"]
+            "lintFilePatterns": [
+              "libs/shared/helpers/**/*.ts",
+              "libs/shared/helpers/**/*.spec.ts",
+              "libs/shared/helpers/**/*.spec.tsx",
+              "libs/shared/helpers/**/*.spec.js",
+              "libs/shared/helpers/**/*.spec.jsx",
+              "libs/shared/helpers/**/*.d.ts"
+            ]
           }
         },
         "test": {
@@ -297,14 +310,16 @@
       "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/shared/redux-helpers/tsconfig.lib.json",
-              "libs/shared/redux-helpers/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/redux-helpers/**/*"]
+            "lintFilePatterns": [
+              "libs/shared/redux-helpers/**/*.ts",
+              "libs/shared/redux-helpers/**/*.spec.ts",
+              "libs/shared/redux-helpers/**/*.spec.tsx",
+              "libs/shared/redux-helpers/**/*.spec.js",
+              "libs/shared/redux-helpers/**/*.spec.jsx",
+              "libs/shared/redux-helpers/**/*.d.ts"
+            ]
           }
         },
         "test": {
@@ -323,14 +338,16 @@
       "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/todos/redux/tsconfig.lib.json",
-              "libs/todos/redux/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/todos/redux/**/*"]
+            "lintFilePatterns": [
+              "libs/todos/redux/**/*.ts",
+              "libs/todos/redux/**/*.spec.ts",
+              "libs/todos/redux/**/*.spec.tsx",
+              "libs/todos/redux/**/*.spec.js",
+              "libs/todos/redux/**/*.spec.jsx",
+              "libs/todos/redux/**/*.d.ts"
+            ]
           }
         },
         "test": {
@@ -349,14 +366,21 @@
       "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/todos/wrapper/tsconfig.lib.json",
-              "libs/todos/wrapper/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/todos/wrapper/**/*"]
+            "lintFilePatterns": [
+              "libs/todos/wrapper/**/*.js",
+              "libs/todos/wrapper/**/*.jsx",
+              "libs/todos/wrapper/**/*.ts",
+              "libs/todos/wrapper/**/*.tsx",
+              "node_modules/@nrwl/react/typings/cssmodule.d.ts",
+              "node_modules/@nrwl/react/typings/image.d.ts",
+              "libs/todos/wrapper/**/*.spec.ts",
+              "libs/todos/wrapper/**/*.spec.tsx",
+              "libs/todos/wrapper/**/*.spec.js",
+              "libs/todos/wrapper/**/*.spec.jsx",
+              "libs/todos/wrapper/**/*.d.ts"
+            ]
           }
         },
         "test": {
@@ -375,14 +399,21 @@
       "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/todos/ui-components/tsconfig.lib.json",
-              "libs/todos/ui-components/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/todos/ui-components/**/*"]
+            "lintFilePatterns": [
+              "libs/todos/ui-components/**/*.js",
+              "libs/todos/ui-components/**/*.jsx",
+              "libs/todos/ui-components/**/*.ts",
+              "libs/todos/ui-components/**/*.tsx",
+              "node_modules/@nrwl/react/typings/cssmodule.d.ts",
+              "node_modules/@nrwl/react/typings/image.d.ts",
+              "libs/todos/ui-components/**/*.spec.ts",
+              "libs/todos/ui-components/**/*.spec.tsx",
+              "libs/todos/ui-components/**/*.spec.js",
+              "libs/todos/ui-components/**/*.spec.jsx",
+              "libs/todos/ui-components/**/*.d.ts"
+            ]
           }
         },
         "test": {
@@ -401,14 +432,21 @@
       "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/todos/feature/tsconfig.lib.json",
-              "libs/todos/feature/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/todos/feature/**/*"]
+            "lintFilePatterns": [
+              "libs/todos/feature/**/*.js",
+              "libs/todos/feature/**/*.jsx",
+              "libs/todos/feature/**/*.ts",
+              "libs/todos/feature/**/*.tsx",
+              "node_modules/@nrwl/react/typings/cssmodule.d.ts",
+              "node_modules/@nrwl/react/typings/image.d.ts",
+              "libs/todos/feature/**/*.spec.ts",
+              "libs/todos/feature/**/*.spec.tsx",
+              "libs/todos/feature/**/*.spec.js",
+              "libs/todos/feature/**/*.spec.jsx",
+              "libs/todos/feature/**/*.d.ts"
+            ]
           }
         },
         "test": {
