@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@babel/preset-react": "7.8.3",
+    "@nrwl/cli": "10.3.0",
     "@nrwl/cypress": "10.3.0",
     "@nrwl/eslint-plugin-nx": "10.3.0",
     "@nrwl/express": "10.3.0",
@@ -64,6 +65,7 @@
     "dotenv": "6.2.0",
     "eslint": "7.10.0",
     "eslint-config-prettier": "6.0.0",
+    "eslint-plugin-cypress": "^2.10.3",
     "eslint-plugin-import": "2.21.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.20.0",
@@ -73,7 +75,6 @@
     "ts-jest": "26.4.0",
     "ts-node": "~7.0.0",
     "tslint": "6.0.0",
-    "typescript": "4.0.3",
-    "eslint-plugin-cypress": "^2.10.3"
+    "typescript": "4.0.3"
   }
 }
