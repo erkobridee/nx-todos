@@ -15,8 +15,13 @@
             "main": "apps/todos/src/main.tsx",
             "polyfills": "apps/todos/src/polyfills.ts",
             "tsConfig": "apps/todos/tsconfig.app.json",
-            "assets": ["apps/todos/src/favicon.ico", "apps/todos/src/assets"],
-            "styles": ["apps/todos/src/styles.scss"],
+            "assets": [
+              "apps/todos/src/favicon.ico",
+              "apps/todos/src/assets"
+            ],
+            "styles": [
+              "apps/todos/src/styles.scss"
+            ],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack",
             "buildLibsFromSource": true
@@ -44,7 +49,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@nrwl/web:dev-server",
@@ -66,8 +74,6 @@
               "apps/todos/**/*.jsx",
               "apps/todos/**/*.ts",
               "apps/todos/**/*.tsx",
-              "node_modules/@nrwl/react/typings/cssmodule.d.ts",
-              "node_modules/@nrwl/react/typings/image.d.ts",
               "apps/todos/**/*.spec.ts",
               "apps/todos/**/*.spec.tsx",
               "apps/todos/**/*.spec.js",
@@ -81,7 +87,10 @@
           "options": {
             "jestConfig": "apps/todos/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/apps/todos"
+          ]
         }
       }
     },
@@ -127,7 +136,9 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"],
+            "assets": [
+              "apps/api/src/assets"
+            ],
             "buildLibsFromSource": true
           },
           "configurations": {
@@ -142,7 +153,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@nrwl/node:execute",
@@ -165,7 +179,10 @@
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/apps/api"
+          ]
         }
       }
     },
@@ -193,7 +210,10 @@
           "options": {
             "jestConfig": "libs/shared/data-model/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/shared/data-model"
+          ]
         }
       }
     },
@@ -210,7 +230,10 @@
               "libs/api/router/tsconfig.lib.json",
               "libs/api/router/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/api/router/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/api/router/**/*"
+            ]
           }
         },
         "test": {
@@ -218,7 +241,10 @@
           "options": {
             "jestConfig": "libs/api/router/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/api/router"
+          ]
         }
       }
     },
@@ -235,7 +261,10 @@
               "libs/api/data/tsconfig.lib.json",
               "libs/api/data/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/api/data/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/api/data/**/*"
+            ]
           }
         },
         "test": {
@@ -243,7 +272,10 @@
           "options": {
             "jestConfig": "libs/api/data/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/api/data"
+          ]
         }
       }
     },
@@ -271,7 +303,10 @@
           "options": {
             "jestConfig": "libs/todos/api-calls/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/todos/api-calls"
+          ]
         }
       }
     },
@@ -299,7 +334,10 @@
           "options": {
             "jestConfig": "libs/shared/helpers/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/shared/helpers"
+          ]
         }
       }
     },
@@ -327,7 +365,10 @@
           "options": {
             "jestConfig": "libs/shared/redux-helpers/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/shared/redux-helpers"
+          ]
         }
       }
     },
@@ -355,7 +396,10 @@
           "options": {
             "jestConfig": "libs/todos/redux/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/todos/redux"
+          ]
         }
       }
     },
@@ -373,8 +417,6 @@
               "libs/todos/wrapper/**/*.jsx",
               "libs/todos/wrapper/**/*.ts",
               "libs/todos/wrapper/**/*.tsx",
-              "node_modules/@nrwl/react/typings/cssmodule.d.ts",
-              "node_modules/@nrwl/react/typings/image.d.ts",
               "libs/todos/wrapper/**/*.spec.ts",
               "libs/todos/wrapper/**/*.spec.tsx",
               "libs/todos/wrapper/**/*.spec.js",
@@ -388,7 +430,10 @@
           "options": {
             "jestConfig": "libs/todos/wrapper/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/todos/wrapper"
+          ]
         }
       }
     },
@@ -406,8 +451,6 @@
               "libs/todos/ui-components/**/*.jsx",
               "libs/todos/ui-components/**/*.ts",
               "libs/todos/ui-components/**/*.tsx",
-              "node_modules/@nrwl/react/typings/cssmodule.d.ts",
-              "node_modules/@nrwl/react/typings/image.d.ts",
               "libs/todos/ui-components/**/*.spec.ts",
               "libs/todos/ui-components/**/*.spec.tsx",
               "libs/todos/ui-components/**/*.spec.js",
@@ -421,7 +464,10 @@
           "options": {
             "jestConfig": "libs/todos/ui-components/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/todos/ui-components"
+          ]
         }
       }
     },
@@ -439,8 +485,6 @@
               "libs/todos/feature/**/*.jsx",
               "libs/todos/feature/**/*.ts",
               "libs/todos/feature/**/*.tsx",
-              "node_modules/@nrwl/react/typings/cssmodule.d.ts",
-              "node_modules/@nrwl/react/typings/image.d.ts",
               "libs/todos/feature/**/*.spec.ts",
               "libs/todos/feature/**/*.spec.tsx",
               "libs/todos/feature/**/*.spec.js",
@@ -454,7 +498,10 @@
           "options": {
             "jestConfig": "libs/todos/feature/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/todos/feature"
+          ]
         }
       }
     }

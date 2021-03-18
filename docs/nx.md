@@ -83,6 +83,8 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
 - Visit the [Nx Documentation](https://nx.dev) to learn more.
 
+  - [Updating Nx](https://nx.dev/latest/react/core-concepts/updating-nx)
+
   - [Nx CLI](https://nx.dev/react/guides/cli)
 
     - [CLI commands to a React project with Nx](https://nx.dev/react/api/home)
