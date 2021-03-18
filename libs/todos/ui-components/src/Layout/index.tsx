@@ -1,5 +1,5 @@
 import * as React from 'react';
-import cn from 'classnames';
+import cn from 'clsx';
 
 import LayoutHeader from './Header';
 import LayoutFooter from './Footer';
@@ -12,7 +12,7 @@ export interface ILayoutProps {
 
 export const Layout: React.FunctionComponent<ILayoutProps> = ({
   children,
-  className
+  className,
 }) => (
   <div className={cn('layout', className)}>
     <div className="layout__container">

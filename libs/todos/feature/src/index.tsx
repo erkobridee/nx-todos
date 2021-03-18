@@ -1,5 +1,5 @@
 import * as React from 'react';
-import cn from 'classnames';
+import cn from 'clsx';
 
 import TodoAdd from './Add';
 import TodosList from './List';
@@ -11,7 +11,7 @@ export interface ITodosFeatureProps {
 }
 
 export const TodosFeature: React.FunctionComponent<ITodosFeatureProps> = ({
-  className
+  className,
 }) => {
   const [isEditing, setIsEditing] = React.useState(false);
 

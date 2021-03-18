@@ -1,5 +1,5 @@
 import * as React from 'react';
-import cn from 'classnames';
+import cn from 'clsx';
 import { useDispatch } from 'react-redux';
 
 import { ITodo } from '@nx-todos/shared/data-model';
@@ -14,7 +14,7 @@ import './_styles.scss';
 
 enum UIState {
   EDIT = 'edit',
-  VIEW = 'view'
+  VIEW = 'view',
 }
 
 export interface ITodosListItemProps {
@@ -28,7 +28,7 @@ export const TodosListItem: React.FunctionComponent<ITodosListItemProps> = ({
   className,
   disabled = false,
   data,
-  onEditing
+  onEditing,
 }) => {
   const dispatch = useDispatch();
 

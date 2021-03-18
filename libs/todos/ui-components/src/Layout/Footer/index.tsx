@@ -1,5 +1,5 @@
 import * as React from 'react';
-import cn from 'classnames';
+import cn from 'clsx';
 
 import NxLogo from '@nx-todos/todos/ui-components/NxLogo';
 
@@ -10,7 +10,7 @@ export interface ILayoutFooterProps {
 }
 
 export const LayoutFooter: React.FunctionComponent<ILayoutFooterProps> = ({
-  className
+  className,
 }) => (
   <div className={cn('layout-footer', className)}>
     <div>

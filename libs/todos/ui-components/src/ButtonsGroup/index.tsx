@@ -1,5 +1,5 @@
 import * as React from 'react';
-import cn from 'classnames';
+import cn from 'clsx';
 
 import './_styles.scss';
 
@@ -9,7 +9,7 @@ export interface IButtonsGroupProps {
 
 export const ButtonsGroup: React.FunctionComponent<IButtonsGroupProps> = ({
   className,
-  children
+  children,
 }) => <div className={cn('btns-group', className)}>{children}</div>;
 
 export default ButtonsGroup;
