@@ -1,5 +1,5 @@
 import * as React from 'react';
-import cn from 'classnames';
+import cn from 'clsx';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Selectors, Operations } from '@nx-todos/todos/redux';
@@ -14,7 +14,7 @@ import './_styles.scss';
 enum ListTypes {
   ALL = 'all',
   INCOMPLETED = 'incompleted',
-  COMPLETED = 'completed'
+  COMPLETED = 'completed',
 }
 
 export interface ITodosListProps {
@@ -24,7 +24,7 @@ export interface ITodosListProps {
 
 export const TodosList: React.FunctionComponent<ITodosListProps> = ({
   className,
-  onEditing
+  onEditing,
 }) => {
   const dispatch = useDispatch();
   const list = useSelector(Selectors.todos.selectTodos);
@@ -39,9 +39,9 @@ export const TodosList: React.FunctionComponent<ITodosListProps> = ({
   const getFilteredList = () => {
     switch (listType) {
       case ListTypes.INCOMPLETED:
-        return list.filter(item => !item.isCompleted);
+        return list.filter((item) => !item.isCompleted);
       case ListTypes.COMPLETED:
-        return list.filter(item => item.isCompleted);
+        return list.filter((item) => item.isCompleted);
       case ListTypes.ALL:
       default:
         return list;
@@ -89,7 +89,7 @@ export const TodosList: React.FunctionComponent<ITodosListProps> = ({
       </ButtonsGroup>
 
       <div className="todos-list__items">
-        {getFilteredList().map(item => (
+        {getFilteredList().map((item) => (
           <TodosListItem
             className="todos-list__item"
             key={item.id}

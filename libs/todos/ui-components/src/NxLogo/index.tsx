@@ -1,5 +1,5 @@
 import * as React from 'react';
-import cn from 'classnames';
+import cn from 'clsx';
 
 import './_styles.scss';
 
@@ -10,7 +10,7 @@ export interface INxLogoProps {
 
 export const NxLogo: React.FunctionComponent<INxLogoProps> = ({
   className,
-  width = '25'
+  width = '25',
 }) => (
   <a
     href="https://nx.dev/react/"

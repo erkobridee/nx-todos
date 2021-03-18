@@ -1,5 +1,5 @@
 import * as React from 'react';
-import cn from 'classnames';
+import cn from 'clsx';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Selectors, Operations } from '@nx-todos/todos/redux';
@@ -17,7 +17,7 @@ export interface ITodoAddProps {
 
 export const TodoAdd: React.FunctionComponent<ITodoAddProps> = ({
   className,
-  disabled = false
+  disabled = false,
 }) => {
   const dispatch = useDispatch();
 

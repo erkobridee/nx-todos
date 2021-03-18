@@ -1,5 +1,5 @@
 import * as React from 'react';
-import cn from 'classnames';
+import cn from 'clsx';
 
 import NxLogo from '@nx-todos/todos/ui-components/NxLogo';
 
@@ -12,7 +12,7 @@ export interface ILayoutHeaderProps {
 
 export const LayoutHeader: React.FunctionComponent<ILayoutHeaderProps> = ({
   className,
-  logoWidth = '100'
+  logoWidth = '100',
 }) => (
   <div className={cn('layout-header', className)}>
     <NxLogo className="layout-header__logo" width={logoWidth} />

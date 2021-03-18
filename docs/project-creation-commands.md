@@ -83,7 +83,7 @@ initially defined the Layout component and move the contend from the todos appli
 
 also added a new project dependency to the components
 
-`yarn add classnames`
+`yarn add clsx`
 
 16. create the todos feature lib (uses the redux and implements the ToDos list/add/edit feature)
 
