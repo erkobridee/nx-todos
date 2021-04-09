@@ -1,10 +1,14 @@
 # Nx
 
-[⬅️ README](../README.md)
+[⬅️&nbsp;&nbsp;README](../README.md)
 
 <p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+🔎&nbsp;&nbsp;**Nx is a set of Extensible Dev Tools for Monorepos.**
+
+- [Introducing Nx 12: Simplified onboarding to Nx, Performance Improvements, Multi-Language support, and more! | Nrwl Blog](https://blog.nrwl.io/introducing-nx-12-simplified-onboarding-to-nx-performance-improvements-multi-language-support-6c344461eb13) - 2021/04/08
+
+- [Nx Private Cloud is Available! | Nrwl Blog](https://blog.nrwl.io/nx-private-cloud-is-available-1cd2891c4561) - 2021/03/24
 
 ## Adding capabilities to your workspace
 
