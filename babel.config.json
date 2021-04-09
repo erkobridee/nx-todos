@@ -1,5 +1,4 @@
 {
-  "presets": ["@nrwl/web/babel"],
-  "babelrcRoots": ["*"],
-  "plugins": ["@babel/plugin-transform-runtime"]
+  "presets": [],
+  "babelrcRoots": ["*"]
 }
