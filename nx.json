@@ -12,26 +12,16 @@
     ".eslintrc.json": "*"
   },
   "projects": {
-    "todos": {
-      "tags": []
-    },
-    "todos-e2e": {
-      "tags": [],
-      "implicitDependencies": ["todos"]
-    },
     "api": {
-      "tags": []
-    },
-    "shared-data-model": {
-      "tags": []
-    },
-    "api-router": {
       "tags": []
     },
     "api-data": {
       "tags": []
     },
-    "todos-api-calls": {
+    "api-router": {
+      "tags": []
+    },
+    "shared-data-model": {
       "tags": []
     },
     "shared-helpers": {
@@ -40,16 +30,26 @@
     "shared-redux-helpers": {
       "tags": []
     },
-    "todos-redux": {
+    "todos": {
       "tags": []
     },
-    "todos-wrapper": {
+    "todos-api-calls": {
+      "tags": []
+    },
+    "todos-e2e": {
+      "tags": [],
+      "implicitDependencies": ["todos"]
+    },
+    "todos-feature": {
+      "tags": []
+    },
+    "todos-redux": {
       "tags": []
     },
     "todos-ui-components": {
       "tags": []
     },
-    "todos-feature": {
+    "todos-wrapper": {
       "tags": []
     }
   },
@@ -63,5 +63,13 @@
   },
   "affected": {
     "defaultBase": "master"
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   }
 }

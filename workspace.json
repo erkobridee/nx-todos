@@ -1,6 +1,202 @@
 {
   "version": 1,
   "projects": {
+    "api": {
+      "root": "apps/api",
+      "sourceRoot": "apps/api/src",
+      "projectType": "application",
+      "prefix": "api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/api",
+            "main": "apps/api/src/main.ts",
+            "tsConfig": "apps/api/tsconfig.app.json",
+            "assets": ["apps/api/src/assets"],
+            "buildLibsFromSource": true
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/api/src/environments/environment.ts",
+                  "with": "apps/api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          },
+          "outputs": ["{options.outputPath}"]
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "api:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/api/**/*.ts",
+              "apps/api/**/*.spec.ts",
+              "apps/api/**/*.d.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/api/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/apps/api"]
+        }
+      }
+    },
+    "api-data": {
+      "root": "libs/api/data",
+      "sourceRoot": "libs/api/data/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/api/data/tsconfig.lib.json",
+              "libs/api/data/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/api/data/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api/data/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/api/data"]
+        }
+      }
+    },
+    "api-router": {
+      "root": "libs/api/router",
+      "sourceRoot": "libs/api/router/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/api/router/tsconfig.lib.json",
+              "libs/api/router/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/api/router/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api/router/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/api/router"]
+        }
+      }
+    },
+    "shared-data-model": {
+      "root": "libs/shared/data-model",
+      "sourceRoot": "libs/shared/data-model/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/data-model/**/*.ts",
+              "libs/shared/data-model/**/*.spec.ts",
+              "libs/shared/data-model/**/*.spec.tsx",
+              "libs/shared/data-model/**/*.spec.js",
+              "libs/shared/data-model/**/*.spec.jsx",
+              "libs/shared/data-model/**/*.d.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/data-model/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/data-model"]
+        }
+      }
+    },
+    "shared-helpers": {
+      "root": "libs/shared/helpers",
+      "sourceRoot": "libs/shared/helpers/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/helpers/**/*.ts",
+              "libs/shared/helpers/**/*.spec.ts",
+              "libs/shared/helpers/**/*.spec.tsx",
+              "libs/shared/helpers/**/*.spec.js",
+              "libs/shared/helpers/**/*.spec.jsx",
+              "libs/shared/helpers/**/*.d.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/helpers/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/helpers"]
+        }
+      }
+    },
+    "shared-redux-helpers": {
+      "root": "libs/shared/redux-helpers",
+      "sourceRoot": "libs/shared/redux-helpers/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/redux-helpers/**/*.ts",
+              "libs/shared/redux-helpers/**/*.spec.ts",
+              "libs/shared/redux-helpers/**/*.spec.tsx",
+              "libs/shared/redux-helpers/**/*.spec.js",
+              "libs/shared/redux-helpers/**/*.spec.jsx",
+              "libs/shared/redux-helpers/**/*.d.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/redux-helpers/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/redux-helpers"]
+        }
+      }
+    },
     "todos": {
       "root": "apps/todos",
       "sourceRoot": "apps/todos/src",
@@ -15,13 +211,8 @@
             "main": "apps/todos/src/main.tsx",
             "polyfills": "apps/todos/src/polyfills.ts",
             "tsConfig": "apps/todos/tsconfig.app.json",
-            "assets": [
-              "apps/todos/src/favicon.ico",
-              "apps/todos/src/assets"
-            ],
-            "styles": [
-              "apps/todos/src/styles.scss"
-            ],
+            "assets": ["apps/todos/src/favicon.ico", "apps/todos/src/assets"],
+            "styles": ["apps/todos/src/styles.scss"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack",
             "buildLibsFromSource": true
@@ -50,9 +241,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@nrwl/web:dev-server",
@@ -88,9 +277,36 @@
             "jestConfig": "apps/todos/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/apps/todos"
-          ]
+          "outputs": ["coverage/apps/todos"]
+        }
+      }
+    },
+    "todos-api-calls": {
+      "root": "libs/todos/api-calls",
+      "sourceRoot": "libs/todos/api-calls/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/todos/api-calls/**/*.ts",
+              "libs/todos/api-calls/**/*.spec.ts",
+              "libs/todos/api-calls/**/*.spec.tsx",
+              "libs/todos/api-calls/**/*.spec.js",
+              "libs/todos/api-calls/**/*.spec.jsx",
+              "libs/todos/api-calls/**/*.d.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/todos/api-calls/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/todos/api-calls"]
         }
       }
     },
@@ -123,72 +339,9 @@
         }
       }
     },
-    "api": {
-      "root": "apps/api",
-      "sourceRoot": "apps/api/src",
-      "projectType": "application",
-      "prefix": "api",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/apps/api",
-            "main": "apps/api/src/main.ts",
-            "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ],
-            "buildLibsFromSource": true
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/api/src/environments/environment.ts",
-                  "with": "apps/api/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          },
-          "outputs": [
-            "{options.outputPath}"
-          ]
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "api:build"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/api/**/*.ts",
-              "apps/api/**/*.spec.ts",
-              "apps/api/**/*.d.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/api/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/apps/api"
-          ]
-        }
-      }
-    },
-    "shared-data-model": {
-      "root": "libs/shared/data-model",
-      "sourceRoot": "libs/shared/data-model/src",
+    "todos-feature": {
+      "root": "libs/todos/feature",
+      "sourceRoot": "libs/todos/feature/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -196,179 +349,25 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/shared/data-model/**/*.ts",
-              "libs/shared/data-model/**/*.spec.ts",
-              "libs/shared/data-model/**/*.spec.tsx",
-              "libs/shared/data-model/**/*.spec.js",
-              "libs/shared/data-model/**/*.spec.jsx",
-              "libs/shared/data-model/**/*.d.ts"
+              "libs/todos/feature/**/*.js",
+              "libs/todos/feature/**/*.jsx",
+              "libs/todos/feature/**/*.ts",
+              "libs/todos/feature/**/*.tsx",
+              "libs/todos/feature/**/*.spec.ts",
+              "libs/todos/feature/**/*.spec.tsx",
+              "libs/todos/feature/**/*.spec.js",
+              "libs/todos/feature/**/*.spec.jsx",
+              "libs/todos/feature/**/*.d.ts"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/shared/data-model/jest.config.js",
+            "jestConfig": "libs/todos/feature/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/shared/data-model"
-          ]
-        }
-      }
-    },
-    "api-router": {
-      "root": "libs/api/router",
-      "sourceRoot": "libs/api/router/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/api/router/tsconfig.lib.json",
-              "libs/api/router/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/router/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/api/router/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/libs/api/router"
-          ]
-        }
-      }
-    },
-    "api-data": {
-      "root": "libs/api/data",
-      "sourceRoot": "libs/api/data/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/api/data/tsconfig.lib.json",
-              "libs/api/data/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/data/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/api/data/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/libs/api/data"
-          ]
-        }
-      }
-    },
-    "todos-api-calls": {
-      "root": "libs/todos/api-calls",
-      "sourceRoot": "libs/todos/api-calls/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/todos/api-calls/**/*.ts",
-              "libs/todos/api-calls/**/*.spec.ts",
-              "libs/todos/api-calls/**/*.spec.tsx",
-              "libs/todos/api-calls/**/*.spec.js",
-              "libs/todos/api-calls/**/*.spec.jsx",
-              "libs/todos/api-calls/**/*.d.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/todos/api-calls/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/libs/todos/api-calls"
-          ]
-        }
-      }
-    },
-    "shared-helpers": {
-      "root": "libs/shared/helpers",
-      "sourceRoot": "libs/shared/helpers/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/helpers/**/*.ts",
-              "libs/shared/helpers/**/*.spec.ts",
-              "libs/shared/helpers/**/*.spec.tsx",
-              "libs/shared/helpers/**/*.spec.js",
-              "libs/shared/helpers/**/*.spec.jsx",
-              "libs/shared/helpers/**/*.d.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/helpers/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/libs/shared/helpers"
-          ]
-        }
-      }
-    },
-    "shared-redux-helpers": {
-      "root": "libs/shared/redux-helpers",
-      "sourceRoot": "libs/shared/redux-helpers/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/redux-helpers/**/*.ts",
-              "libs/shared/redux-helpers/**/*.spec.ts",
-              "libs/shared/redux-helpers/**/*.spec.tsx",
-              "libs/shared/redux-helpers/**/*.spec.js",
-              "libs/shared/redux-helpers/**/*.spec.jsx",
-              "libs/shared/redux-helpers/**/*.d.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/redux-helpers/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/libs/shared/redux-helpers"
-          ]
+          "outputs": ["coverage/libs/todos/feature"]
         }
       }
     },
@@ -397,43 +396,7 @@
             "jestConfig": "libs/todos/redux/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/todos/redux"
-          ]
-        }
-      }
-    },
-    "todos-wrapper": {
-      "root": "libs/todos/wrapper",
-      "sourceRoot": "libs/todos/wrapper/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/todos/wrapper/**/*.js",
-              "libs/todos/wrapper/**/*.jsx",
-              "libs/todos/wrapper/**/*.ts",
-              "libs/todos/wrapper/**/*.tsx",
-              "libs/todos/wrapper/**/*.spec.ts",
-              "libs/todos/wrapper/**/*.spec.tsx",
-              "libs/todos/wrapper/**/*.spec.js",
-              "libs/todos/wrapper/**/*.spec.jsx",
-              "libs/todos/wrapper/**/*.d.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/todos/wrapper/jest.config.js",
-            "passWithNoTests": true
-          },
-          "outputs": [
-            "coverage/libs/todos/wrapper"
-          ]
+          "outputs": ["coverage/libs/todos/redux"]
         }
       }
     },
@@ -465,15 +428,13 @@
             "jestConfig": "libs/todos/ui-components/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/todos/ui-components"
-          ]
+          "outputs": ["coverage/libs/todos/ui-components"]
         }
       }
     },
-    "todos-feature": {
-      "root": "libs/todos/feature",
-      "sourceRoot": "libs/todos/feature/src",
+    "todos-wrapper": {
+      "root": "libs/todos/wrapper",
+      "sourceRoot": "libs/todos/wrapper/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -481,27 +442,25 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/todos/feature/**/*.js",
-              "libs/todos/feature/**/*.jsx",
-              "libs/todos/feature/**/*.ts",
-              "libs/todos/feature/**/*.tsx",
-              "libs/todos/feature/**/*.spec.ts",
-              "libs/todos/feature/**/*.spec.tsx",
-              "libs/todos/feature/**/*.spec.js",
-              "libs/todos/feature/**/*.spec.jsx",
-              "libs/todos/feature/**/*.d.ts"
+              "libs/todos/wrapper/**/*.js",
+              "libs/todos/wrapper/**/*.jsx",
+              "libs/todos/wrapper/**/*.ts",
+              "libs/todos/wrapper/**/*.tsx",
+              "libs/todos/wrapper/**/*.spec.ts",
+              "libs/todos/wrapper/**/*.spec.tsx",
+              "libs/todos/wrapper/**/*.spec.js",
+              "libs/todos/wrapper/**/*.spec.jsx",
+              "libs/todos/wrapper/**/*.d.ts"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/todos/feature/jest.config.js",
+            "jestConfig": "libs/todos/wrapper/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/todos/feature"
-          ]
+          "outputs": ["coverage/libs/todos/wrapper"]
         }
       }
     }

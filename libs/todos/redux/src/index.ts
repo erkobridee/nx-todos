@@ -5,7 +5,7 @@ import * as Selectors from './store/state/selectors';
 
 //----------------------------------------------------------------------------//
 
-export { IRootState } from './store/definitions';
+export type { IRootState } from './store/definitions';
 
 export { store, dispatch, getState } from './store';
 
