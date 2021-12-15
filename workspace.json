@@ -210,7 +210,7 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@nrwl/web:build",
+          "builder": "@nrwl/web:webpack",
           "options": {
             "outputPath": "dist/apps/todos",
             "index": "apps/todos/src/index.html",
