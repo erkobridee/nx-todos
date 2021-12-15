@@ -56,7 +56,8 @@
           },
           "outputs": ["coverage/apps/api"]
         }
-      }
+      },
+      "tags": []
     },
     "api-data": {
       "root": "libs/api/data",
@@ -82,7 +83,8 @@
           },
           "outputs": ["coverage/libs/api/data"]
         }
-      }
+      },
+      "tags": []
     },
     "api-router": {
       "root": "libs/api/router",
@@ -108,7 +110,8 @@
           },
           "outputs": ["coverage/libs/api/router"]
         }
-      }
+      },
+      "tags": []
     },
     "shared-data-model": {
       "root": "libs/shared/data-model",
@@ -137,7 +140,8 @@
           },
           "outputs": ["coverage/libs/shared/data-model"]
         }
-      }
+      },
+      "tags": []
     },
     "shared-helpers": {
       "root": "libs/shared/helpers",
@@ -166,7 +170,8 @@
           },
           "outputs": ["coverage/libs/shared/helpers"]
         }
-      }
+      },
+      "tags": []
     },
     "shared-redux-helpers": {
       "root": "libs/shared/redux-helpers",
@@ -195,7 +200,8 @@
           },
           "outputs": ["coverage/libs/shared/redux-helpers"]
         }
-      }
+      },
+      "tags": []
     },
     "todos": {
       "root": "apps/todos",
@@ -279,7 +285,8 @@
           },
           "outputs": ["coverage/apps/todos"]
         }
-      }
+      },
+      "tags": []
     },
     "todos-api-calls": {
       "root": "libs/todos/api-calls",
@@ -308,7 +315,8 @@
           },
           "outputs": ["coverage/libs/todos/api-calls"]
         }
-      }
+      },
+      "tags": []
     },
     "todos-e2e": {
       "root": "apps/todos-e2e",
@@ -337,7 +345,9 @@
             ]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["todos"]
     },
     "todos-feature": {
       "root": "libs/todos/feature",
@@ -369,7 +379,8 @@
           },
           "outputs": ["coverage/libs/todos/feature"]
         }
-      }
+      },
+      "tags": []
     },
     "todos-redux": {
       "root": "libs/todos/redux",
@@ -398,7 +409,8 @@
           },
           "outputs": ["coverage/libs/todos/redux"]
         }
-      }
+      },
+      "tags": []
     },
     "todos-ui-components": {
       "root": "libs/todos/ui-components",
@@ -430,7 +442,8 @@
           },
           "outputs": ["coverage/libs/todos/ui-components"]
         }
-      }
+      },
+      "tags": []
     },
     "todos-wrapper": {
       "root": "libs/todos/wrapper",
@@ -462,70 +475,8 @@
           },
           "outputs": ["coverage/libs/todos/wrapper"]
         }
-      }
+      },
+      "tags": []
     }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/react"
-  },
-  "schematics": {
-    "@nrwl/workspace": {
-      "library": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/cypress": {
-      "cypress-project": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/react": {
-      "application": {
-        "style": "scss",
-        "linter": "eslint",
-        "babel": true
-      },
-      "component": {
-        "style": "scss"
-      },
-      "library": {
-        "style": "scss",
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/next": {
-      "application": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/web": {
-      "application": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/node": {
-      "application": {
-        "linter": "eslint"
-      },
-      "library": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/nx-plugin": {
-      "plugin": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/nest": {
-      "application": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/express": {
-      "application": {
-        "linter": "eslint"
-      }
-    }
-  },
-  "defaultProject": "todos"
+  }
 }

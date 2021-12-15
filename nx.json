@@ -11,48 +11,6 @@
     "tsconfig.base.json": "*",
     ".eslintrc.json": "*"
   },
-  "projects": {
-    "api": {
-      "tags": []
-    },
-    "api-data": {
-      "tags": []
-    },
-    "api-router": {
-      "tags": []
-    },
-    "shared-data-model": {
-      "tags": []
-    },
-    "shared-helpers": {
-      "tags": []
-    },
-    "shared-redux-helpers": {
-      "tags": []
-    },
-    "todos": {
-      "tags": []
-    },
-    "todos-api-calls": {
-      "tags": []
-    },
-    "todos-e2e": {
-      "tags": [],
-      "implicitDependencies": ["todos"]
-    },
-    "todos-feature": {
-      "tags": []
-    },
-    "todos-redux": {
-      "tags": []
-    },
-    "todos-ui-components": {
-      "tags": []
-    },
-    "todos-wrapper": {
-      "tags": []
-    }
-  },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
@@ -71,5 +29,68 @@
         "projects": "dependencies"
       }
     ]
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/react"
+  },
+  "defaultProject": "todos",
+  "generators": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/react": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "scss"
+      },
+      "library": {
+        "style": "scss",
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/web": {
+      "application": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/nx-plugin": {
+      "plugin": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "eslint"
+      }
+    }
   }
 }
