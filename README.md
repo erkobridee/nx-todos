@@ -10,7 +10,7 @@ This project was generated using [Nx](https://nx.dev) ([v13.7.3](https://github.
 
   - [Build a To-Do application Using Django and React | Scotch.io](https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react)
 
-ℹ️&nbsp;&nbsp;use the node.js v12 LTS
+ℹ️&nbsp;&nbsp;use the node.js v14 LTS
 
 ## Goal
 
@@ -33,9 +33,9 @@ This project was generated using [Nx](https://nx.dev) ([v13.7.3](https://github.
 - It's really interesting breakdown the application into
   smaller libs, so we have better code isolation, the possibility to run tests on that code and also using the `nx dep-graph` have a better understanding of the project code and how the parts of the project relate to each other
 
-  - followed some ideas from [Using Nx at Enterprises](https://nx.dev/react/guides/monorepo-nx-enterprise)
+  - followed some ideas from [Using Nx at Enterprises](https://nx.dev/guides/monorepo-nx-enterprise#using-nx-at-enterprises)
 
-- The libraries created by the Nx CLI has a pre-defined code structure ([more information about it here](https://nx.dev/react/tutorial/08-create-libs))
+- The libraries created by the Nx CLI has a pre-defined code structure ([more information about it here](https://nx.dev/react-tutorial/08-create-libs#react-nx-tutorial---step-8-create-libs))
 
   - The main concept of a library adopted is to be a "Black Box", which what's exposed from the library is defined on the `src/index.ts`
 
