@@ -10,10 +10,9 @@ export interface ILayoutProps {
   className?: string;
 }
 
-export const Layout: React.FunctionComponent<ILayoutProps> = ({
-  children,
-  className,
-}) => (
+export const Layout: React.FunctionComponent<
+  React.PropsWithChildren<ILayoutProps>
+> = ({ children, className }) => (
   <div className={cn('layout', className)}>
     <div className="layout__container">
       <LayoutHeader className="layout__header" />

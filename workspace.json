@@ -9,7 +9,7 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@nrwl/node:build",
+          "builder": "@nrwl/node:webpack",
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
@@ -33,7 +33,7 @@
           "outputs": ["{options.outputPath}"]
         },
         "serve": {
-          "builder": "@nrwl/node:execute",
+          "builder": "@nrwl/node:node",
           "options": {
             "buildTarget": "api:build"
           }
@@ -51,7 +51,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/api/jest.config.js",
+            "jestConfig": "apps/api/jest.config.ts",
             "passWithNoTests": true
           },
           "outputs": ["coverage/apps/api"]
@@ -78,7 +78,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/api/data/jest.config.js",
+            "jestConfig": "libs/api/data/jest.config.ts",
             "passWithNoTests": true
           },
           "outputs": ["coverage/libs/api/data"]
@@ -105,7 +105,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/api/router/jest.config.js",
+            "jestConfig": "libs/api/router/jest.config.ts",
             "passWithNoTests": true
           },
           "outputs": ["coverage/libs/api/router"]
@@ -135,7 +135,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/shared/data-model/jest.config.js",
+            "jestConfig": "libs/shared/data-model/jest.config.ts",
             "passWithNoTests": true
           },
           "outputs": ["coverage/libs/shared/data-model"]
@@ -165,7 +165,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/shared/helpers/jest.config.js",
+            "jestConfig": "libs/shared/helpers/jest.config.ts",
             "passWithNoTests": true
           },
           "outputs": ["coverage/libs/shared/helpers"]
@@ -195,7 +195,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/shared/redux-helpers/jest.config.js",
+            "jestConfig": "libs/shared/redux-helpers/jest.config.ts",
             "passWithNoTests": true
           },
           "outputs": ["coverage/libs/shared/redux-helpers"]
@@ -245,9 +245,16 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "development": {
+              "extractLicenses": false,
+              "optimization": false,
+              "sourceMap": true,
+              "vendorChunk": true
             }
           },
-          "outputs": ["{options.outputPath}"]
+          "outputs": ["{options.outputPath}"],
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@nrwl/web:dev-server",
@@ -258,8 +265,12 @@
           "configurations": {
             "production": {
               "buildTarget": "todos:build:production"
+            },
+            "development": {
+              "buildTarget": "todos:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
@@ -280,7 +291,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/todos/jest.config.js",
+            "jestConfig": "apps/todos/jest.config.ts",
             "passWithNoTests": true
           },
           "outputs": ["coverage/apps/todos"]
@@ -310,7 +321,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/todos/api-calls/jest.config.js",
+            "jestConfig": "libs/todos/api-calls/jest.config.ts",
             "passWithNoTests": true
           },
           "outputs": ["coverage/libs/todos/api-calls"]
@@ -374,7 +385,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/todos/feature/jest.config.js",
+            "jestConfig": "libs/todos/feature/jest.config.ts",
             "passWithNoTests": true
           },
           "outputs": ["coverage/libs/todos/feature"]
@@ -404,7 +415,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/todos/redux/jest.config.js",
+            "jestConfig": "libs/todos/redux/jest.config.ts",
             "passWithNoTests": true
           },
           "outputs": ["coverage/libs/todos/redux"]
@@ -437,7 +448,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/todos/ui-components/jest.config.js",
+            "jestConfig": "libs/todos/ui-components/jest.config.ts",
             "passWithNoTests": true
           },
           "outputs": ["coverage/libs/todos/ui-components"]
@@ -470,7 +481,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/todos/wrapper/jest.config.js",
+            "jestConfig": "libs/todos/wrapper/jest.config.ts",
             "passWithNoTests": true
           },
           "outputs": ["coverage/libs/todos/wrapper"]

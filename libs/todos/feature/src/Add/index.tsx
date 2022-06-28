@@ -30,7 +30,7 @@ export const TodoAdd: React.FunctionComponent<ITodoAddProps> = ({
   const isTodoFetched = useSelector(Selectors.todos.selectIsTodoFetched);
 
   const onAddClickHandler = () => {
-    dispatch(Operations.todos.add(value));
+    Operations.todos.add(value)(dispatch);
   };
 
   const onTextChangeHandler: TFunction<

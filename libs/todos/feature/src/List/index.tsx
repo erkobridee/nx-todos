@@ -56,7 +56,7 @@ export const TodosList: React.FunctionComponent<ITodosListProps> = ({
   };
 
   React.useEffect(() => {
-    dispatch(Operations.todos.list());
+    Operations.todos.list()(dispatch);
   }, []);
 
   return (
