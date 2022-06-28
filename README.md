@@ -2,7 +2,7 @@
 
 ToDos project example
 
-This project was generated using [Nx](https://nx.dev) ([v13.8.3](https://github.com/nrwl/nx/releases/tag/13.8.3))
+This project was generated using [Nx](https://nx.dev) ([v14.3.6](https://github.com/nrwl/nx/releases/tag/14.3.6))
 
 - ToDos examples
 
@@ -10,7 +10,7 @@ This project was generated using [Nx](https://nx.dev) ([v13.8.3](https://github.
 
   - [Build a To-Do application Using Django and React | Scotch.io](https://scotch.io/tutorials/build-a-to-do-application-using-django-and-react)
 
-ℹ️&nbsp;&nbsp;use the node.js v14 LTS
+ℹ️&nbsp;&nbsp;use the node.js v16 LTS
 
 ## Goal
 

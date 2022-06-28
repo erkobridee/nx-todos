@@ -52,7 +52,7 @@ export const TodosListItem: React.FunctionComponent<ITodosListItemProps> = ({
 
     if (data.label !== value) {
       switchToViewUI();
-      dispatch(Operations.todos.updateLabel(data.id, value));
+      Operations.todos.updateLabel(data.id, value)(dispatch);
     }
   };
 
@@ -61,11 +61,11 @@ export const TodosListItem: React.FunctionComponent<ITodosListItemProps> = ({
   const onEditClick = switchToEditUI;
 
   const onRemoveClick = () => {
-    dispatch(Operations.todos.remove(data.id));
+    Operations.todos.remove(data.id)(dispatch);
   };
 
   const onCompletedCheckerChange = () => {
-    dispatch(Operations.todos.toggleCompleted(data.id));
+    Operations.todos.toggleCompleted(data.id)(dispatch);
   };
 
   const buildUI = () => {
