@@ -2,7 +2,7 @@
 
 ToDos project example
 
-This project was generated using [Nx](https://nx.dev) ([v14.3.6](https://github.com/nrwl/nx/releases/tag/14.3.6))
+This project was generated using [Nx](https://nx.dev) ([v14.4.2](https://github.com/nrwl/nx/releases/tag/14.4.2))
 
 - ToDos examples
 
